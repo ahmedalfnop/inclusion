@@ -63,7 +63,8 @@ Js hooks use prefix `.js-*`.
 Inclusion plugins require jQuery library. So this dependency was included into `bower.json` for the further development.
 
 ## TODO
-* Version with mixins instad extends
+* Less version
+* Version with mixins instead extends
 * No-preprocessor version
 
 ## Changelog
