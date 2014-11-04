@@ -1,0 +1,96 @@
+@mixin figure(
+   $type: image, 
+   $position: center, 
+   $extra: false, 
+   $color: dark
+){        
+   @extend %figure-elem-#{$position} !optional;
+   @extend %caption-#{$position}-#{$color} !optional;
+   @if $type != "image"{
+      @extend %figure-code-#{$color} !optional;
+   }
+   @if $extra != false{
+      @extend %figure-#{$position}-extra !optional; 
+   }           
+}
+
+/* Common figure */
+   %common-caption{         
+      & figcaption{
+         font-family: $font-condensed;
+         margin: 10px 0 5px;
+         padding: 0 10px;
+         font-size: 25px;
+         @media screen and (max-width: 960px){
+           font-size: 20px;
+         }
+      }         
+   }  
+   
+   @each $position in $align{
+      @each $color in $colors{
+         %caption-#{nth($position, 1)}-#{nth($color, 1)}{
+            @extend %common-caption;
+            @extend %figure-color-#{nth($color, 1)} !optional;
+            
+            & figcaption{
+               @extend %figure-align-#{nth($position, 1)} !optional;
+               @if nth($position, 1) != center{
+                  @extend %figure-border-#{nth($position, 1)}-#{nth($color, 1)} !optional;
+               }                
+            }
+         }            
+      }
+   }
+
+/* Figure type */
+   @each $color in $colors{
+      %figure-code-#{nth($color, 1)}{               
+         code,pre {
+            color: #{nth($color, 2)};
+         }
+
+         pre { 
+            background-color: lighten(nth($color, 6), 5%);
+            border-color: darken(nth($color, 6), 10%);
+         }                  
+      } 
+   }     
+
+ /* Figure alignement */
+   @each $position in $align{
+      %figure-align-#{nth($position, 1)}{
+         text-align: #{nth($position, 1)};
+      }
+   } 
+
+/* Figure border */   
+   @each $position in $align{
+      @each $color in $colors{
+         %figure-border-#{nth($position, 1)}-#{nth($color, 1)}{
+            @include border(#{nth($position, 1)}, #{nth($color, 1)});
+         }
+      }
+   } 
+
+/* Figure float */
+   @each $position in $align{
+      %figure-elem-#{nth($position, 1)}{
+         @include common-elem(#{nth($position, 1)});
+      }
+   }
+   
+/* Figure extra */
+   @each $position in $align{
+      %figure-#{nth($position, 1)}-extra{
+         @include common-elem-extra(#{nth($position, 1)});
+      }            
+   } 
+
+
+/* Figure color */ 
+   @each $color in $colors{
+      %figure-color-#{nth($color, 1)}{
+         color: #{nth($color, 4)};
+      }
+   }

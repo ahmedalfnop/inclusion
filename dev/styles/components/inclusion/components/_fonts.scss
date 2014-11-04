@@ -1,0 +1,18 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300|Open+Sans+Condensed:300&subset=latin,cyrillic);
+/*@import "../fonts/OpenSans/opensans.css"; */
+/*@import "../fonts/OpenSans-Cond/opensans-cond.css";*/
+
+/* 'Open Sans', Tahoma, Verdana, Arial, sans-serif - for headings and text*/ 
+/*  Georgia, Times, "Times New Roman", serif  - for blockquotes and lists */
+/*  Consolas, Monaco, 'Andale Mono', monospace - for code fragments */
+
+@font-face {
+  font-family: 'inclusion';
+  src: url('../fonts/inclusion/inclusion.eot');
+  src: url('../fonts/inclusion/inclusion.eot#iefix') format('embedded-opentype'),
+       url('../fonts/inclusion/inclusion.woff') format('woff'),
+       url('../fonts/inclusion/inclusion.ttf') format('truetype'),
+       url('../fonts/inclusion/inclusion.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

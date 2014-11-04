@@ -1,0 +1,128 @@
+      blockquote{
+         font-family: $font-serif;
+         display: block;
+         clear: both;
+         padding: 10px 0 5px;
+         margin-bottom: 20px;
+         
+         & p{
+            font-style: italic;
+         }      
+         & cite{
+            display: block;
+            margin-top: 10px;  
+            font-size: 20px;
+            @media screen and (max-width: 960px){
+              font-size: 18px;
+            }
+            
+            &:before{
+               content: "\2014";
+            }
+         }
+      }
+      @mixin blockquote(
+         $align: center, 
+         $position: normal, 
+         $extra: false, 
+         $color: dark, 
+         $font: inherit
+      ){          
+         /*@extend %bq-#{$align} !optional;*/
+         @extend %bq-#{$align}-#{$color} !optional;
+         @extend %bq-font-#{$font} !optional;
+         @extend %bq-elem-#{$position} !optional;
+         
+         @if $extra != false{            
+            @extend %bq-#{$align}-extra !optional;
+            @extend %bq-#{$position}-extra !optional;
+         }   
+      }  
+      
+      /* Common blockquote */         
+      @each $position in $align{ 
+         @each $color in $colors{
+            @if nth($position, 1) == center{    
+               %bq-center-#{nth($color, 1)}{               
+                  @extend %bq-align-justify;
+                  @extend %bq-color-#{nth($color, 3)} !optional;                 
+                         
+                  & p:first-child:before{         
+                     content: "\201C";
+                     padding-right: 10px;
+                     font-size: 60px;
+                     line-height: 0;
+                     vertical-align: middle; 
+                  }    
+                  & cite{
+                     @extend %bq-align-right;
+                     @extend %bq-color-#{nth($color, 1)} !optional;
+               
+                     & a{            
+                        @extend %bq-color-#{nth($color, 1)} !optional;
+                     }
+                  }
+               }                  
+            } @else{
+               %bq-#{nth($position, 1)}-#{nth($color, 1)}{
+                  padding-#{nth($position, 1)}: 15px;
+                  @extend %bq-align-#{nth($position, 1)} !optional; 
+                  @extend %bq-color-#{nth($color, 3)} !optional;
+                  @extend %bq-border-#{nth($position, 1)}-#{nth($color, 1)} !optional;
+                  
+                  & cite{
+                     @extend %bq-align-#{nth($position, 2)} !optional;
+                     @extend %bq-color-#{nth($color, 1)} !optional;
+               
+                     & a{            
+                        @extend %bq-color-#{nth($color, 1)} !optional;
+                     }
+                  }
+               }               
+            }
+         }
+      }         
+
+      /* Blockquote border */
+         @each $position in $align{
+            @each $color in $colors{
+               %bq-border-#{nth($position, 1)}-#{nth($color, 1)}{
+                  @include border(#{nth($position, 1)}, #{nth($color, 1)});
+               }
+            }
+         }               
+
+      /* Blockquote alignement */
+         @each $position in $align{
+            %bq-align-#{nth($position, 1)}{
+               text-align: #{nth($position, 1)};
+            }
+         }   
+
+      /* Blockquote float */
+         @each $position in $align{
+            %bq-elem-#{nth($position, 1)}{
+               @include common-elem(#{nth($position, 1)});
+            }
+         }   
+
+      /* Blockquote extra */
+         @each $position in $align{
+            %bq-#{nth($position, 1)}-extra{
+               @include common-elem-extra(#{nth($position, 1)});
+            }
+         }   
+
+      /* Blockquote color */  
+         @each $color in $colors{
+            %bq-color-#{nth($color, 1)}{
+               color: #{nth($color, 2)};
+            }
+         }
+
+      /* Blockquote font */
+         @each $font in $fonts{
+            %bq-font-#{nth($font, 1)}{
+               font-family: #{nth($font, 2)};
+            }
+         } 

@@ -1,0 +1,70 @@
+@mixin list(
+   $type: ul, 
+   $position: normal, 
+   $extra: false, 
+   $color: dark, 
+   $font: serif
+){
+   @extend %list-common;
+   @extend %#{$type} !optional;
+   @extend %list-elem-#{$position} !optional;
+   @extend %list-color-#{$color} !optional;
+   @extend %list-font-#{$font} !optional;
+   @if $extra != false{
+      @extend %list-#{$position}-extra !optional;
+   }   
+}  
+
+/* Common list*/
+   %list-common{
+      list-style-position: inside;
+      font-size: 20px;
+      line-height: 1.4;
+      font-weight: 400;
+      text-align: left;
+      
+      & ul{
+         margin-left: 20px;
+      }
+      @media screen and (max-width: 960px){
+        font-size: 18px;
+      }
+   }
+
+   /* Common ul */         
+      %ul{     
+         list-style-type: square;
+      }
+
+   /* Common ol */      
+      %ol{
+         list-style-type: decimal;
+      }         
+
+/* List float */
+   @each $position in $align{
+      %list-elem-#{nth($position, 1)}{
+         @include common-elem(#{nth($position, 1)});
+      }
+   }   
+
+/* List extra */
+   @each $position in $align{
+      %list-#{nth($position, 1)}-extra{
+         @include common-elem-extra(#{nth($position, 1)});
+      }            
+   }  
+
+/* List color */  
+   @each $color in $colors{
+      %list-color-#{nth($color, 1)}{
+         color: #{nth($color, 4)};
+      }
+   }
+
+/* List font */
+   @each $font in $fonts{
+      %list-font-#{nth($font, 1)}{
+         font-family: #{nth($font, 2)};
+      }
+   }

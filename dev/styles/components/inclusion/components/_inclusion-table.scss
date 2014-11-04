@@ -1,0 +1,98 @@
+@mixin table(
+   $align: left, 
+   $position: center, 
+   $extra: false, 
+   $color: dark, 
+   $font: serif
+){
+   @extend %table-common;
+   @extend %table-align-#{$align} !optional;
+   @extend %table-#{$color} !optional;
+   @extend %list-font-#{$font} !optional;
+   @extend %table-elem-#{$position} !optional;
+   @if $extra != false{
+      @extend %table-#{$position}-extra !optional;
+   }   
+}
+
+/* Common table */
+   %table-common {
+      max-width: 100%;
+      margin: 10px auto 20px;
+      border-collapse: collapse;
+      border-spacing: 0;
+      font-size: 16px;
+      line-height: 1.2;           
+
+      & {
+         th, .group{
+            font-weight: bold;
+            text-align: center;
+         }
+         th, td{    
+            padding: 15px 10px;
+            vertical-align: middle;
+            @media screen and (max-width: 480px){
+               padding: 5px 2px;
+            }
+         }
+         caption{
+            caption-side: bottom;
+            font-family: $font-condensed;
+            margin: 10px 0 5px;
+            padding: 0 10px;
+            font-size: 25px;
+         }
+      }
+   }            
+
+/* Table alignement */
+   @each $position in $align{
+      %table-align-#{nth($position, 1)}{
+         text-align: #{nth($position, 1)};
+      }
+   }
+
+/* Table color */ 
+   @each $color in $colors{
+      %table-#{nth($color, 1)}{
+         color: #{nth($color, 4)};
+
+         & {
+            td:not(:last-of-type){
+               border-right: 1px solid #{nth($color, 4)};
+            }
+            tr{
+               border-bottom: 1px solid #{nth($color, 4)};
+            }
+            th{
+               color: #{nth($color, 2)};
+               border-bottom: 2px solid #{nth($color, 2)};
+            }
+            .group{
+               color: #{nth($color, 2)};
+            }
+         }            
+      }
+   } 
+
+/* Table font */
+   @each $font in $fonts{
+      %table-font-#{nth($font, 1)}{
+         font-family: #{nth($font, 2)};
+      }
+   } 
+
+/* Table float */
+   @each $position in $align{
+      %table-elem-#{nth($position, 1)}{
+         @include common-elem(#{nth($position, 1)});
+      }
+   }
+   
+/* Table size */
+   @each $position in $align{
+      %table-#{nth($position, 1)}-extra{
+         @include common-elem-extra(#{nth($position, 1)});
+      }            
+   }   

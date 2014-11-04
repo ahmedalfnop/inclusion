@@ -1,0 +1,20 @@
+{
+  "name": "simple-html5-ajax-php-form",
+  "version": "1.0.0",
+  "authors": [
+    "Maxim Orlov <mail@orlovmax.com>"
+  ],
+  "description": "Bower components for simple form",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mycodelab/simple-html5-ajax-php-form"
+  },
+  "bugs": {
+    "url": "https://github.com/mycodelab/simple-html5-ajax-php-form/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "2.1.1"
+  }
+}
