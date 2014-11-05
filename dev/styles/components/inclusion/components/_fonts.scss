@@ -1,6 +1,24 @@
+// Use OpenSans and OpenSans Condensed from Google cdn
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300|Open+Sans+Condensed:300&subset=latin,cyrillic);
-/*@import "../fonts/OpenSans/opensans.css"; */
-/*@import "../fonts/OpenSans-Cond/opensans-cond.css";*/
+
+// For some reasons, if you need - there are local copies of current fonts
+// @font-face {
+//     font-family: 'Open Sans';
+//     src: url('../fonts/opensans/opensans-regular.eot');
+//     src: url('../fonts/opensans/opensans-regular.eot') format('embedded-opentype'),
+//          url('../fonts/opensans/opensans-regular.woff') format('woff'),
+//          url('../fonts/opensans/opensans-regular.ttf') format('truetype'),
+//          url('../fonts/opensans/opensans-regular.svg#OpenSansRegular') format('svg');
+// }
+
+// @font-face {
+//     font-family: 'Open Sans Condensed';
+//     src: url('../fonts/opensans-cond/opensans-condlight.eot');
+//     src: url('../fonts/opensans-cond/opensans-condlight.eot') format('embedded-opentype'),
+//          url('../fonts/opensans-cond/opensans-condlight.woff') format('woff'),
+//          url('../fonts/opensans-cond/opensans-condlight.ttf') format('truetype'),
+//          url('../fonts/opensans-cond/opensans-condlight.svg#OpenSansCondensedLight') format('svg');
+// }
 
 /* 'Open Sans', Tahoma, Verdana, Arial, sans-serif - for headings and text*/ 
 /*  Georgia, Times, "Times New Roman", serif  - for blockquotes and lists */
