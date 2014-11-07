@@ -133,10 +133,6 @@ input[type=submit] {
    $Fonts
    ==============================*/
 
-/*@import "../fonts/OpenSans/opensans.css"; */
-
-/*@import "../fonts/OpenSans-Cond/opensans-cond.css";*/
-
 /* 'Open Sans', Tahoma, Verdana, Arial, sans-serif - for headings and text*/
 
 /*  Georgia, Times, "Times New Roman", serif  - for blockquotes and lists */
@@ -339,6 +335,8 @@ body,
 	width: 100%;
 	height: 100%;
 }
+
+/* Selection mixin */
 
 /* Body mixin */
 
@@ -1821,6 +1819,21 @@ blockquote cite:before {
 .demo__plain-text {
 	font-family: 'redacted_scriptregular';
 	color: #bdc3c7; /* silver color from flatui palette */
+}
+
+*::-moz-selection {
+	color: #efefef;
+	background: #2b2b2b;
+}
+
+*::selection {
+	color: #efefef;
+	background: #2b2b2b;
+}
+
+*::-moz-selection {
+	color: #efefef;
+	background: #2b2b2b;
 }
 
 .container {

@@ -25,6 +25,7 @@ And extra options:
     - [Structure](#structure)
     - [HTML and CSS naming](#html-and-css-naming)
     - [Dependencies](#dependencies)
+    - [Sublime snippets](#sublime-snippets)
 * [TODO](#todo)
 * [Changelog](#changelog)
 * [Credits](#credits)
@@ -62,12 +63,18 @@ Js hooks use prefix `.js-*`.
 ###Dependencies
 Inclusion plugins require jQuery library. So this dependency was included into `bower.json` for the further development.
 
+###Sublime snippets
+I don't like to keep in mind all those mixin names, so I've created this snippets for Subime text2, with shortkeys like `ifi` - which means inclusion figure image. In markup (jade or html) it will create markup for figure element with img tag with necessary classnames and figcaption. In scss it will create empty rule with included mixin. In both cases there will be multiple cursor anchors. Soon I'll add a list with shortkeys.
+
 ## TODO
+* Shortkeys list for snippets. Make snippet completion or something like that.
 * Less version
 * Version with mixins instead extends
 * No-preprocessor version
 
 ## Changelog
+* v1.2 (November 08, 2014)
+  * Sublime snippets added, selection mixin added
 * v1.1 (November 04, 2014)
   * Stable version
 * v1.0 (August --, 2014)

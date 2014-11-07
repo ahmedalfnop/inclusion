@@ -9,7 +9,7 @@
     font-family: 'redacted_scriptregular';
     color: #bdc3c7; /* silver color from flatui palette */
  }
-
+@include selection($color: dark);
 body{
 	@include body($align: left, $color: light);
 }
@@ -32,7 +32,7 @@ body{
    $Home section
    ==============================*/ 				
 	.home{
-		@include section($bg-color: none, $shadow: false, $align: center, $bg-image: "../img/home.jpg", $pattern: dark, $jumbo: true);
+		@include section($bg-color: none, $shadow: false, $align: center, $bg-image: "../img/home.jpg", $overlay: dark, $jumbo: true);
 
 		&__title{
 			@include typo($align: inherit, $color: light, $font: inherit, $text-shadow: #555);

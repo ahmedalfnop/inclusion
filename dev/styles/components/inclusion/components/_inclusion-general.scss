@@ -1,7 +1,30 @@
 html, body, .main{
 	width: 100%;
 	height: 100%;
-}	
+}
+   /* Selection mixin */
+      @mixin selection($color: dark){
+         @if $color == "dark"{
+            *::selection {
+               color: $color-light;
+               background: $color-dark;
+            }
+            *::-moz-selection {
+                color: $color-light;
+                background: $color-dark;
+            }
+         } @else {
+            *::selection {
+               color: $color-dark;
+               background: $color-light;
+            }
+            *::-moz-selection {
+                color: $color-dark;
+                background: $color-light;
+            }
+         }
+      }
+      	
 	 /* Body mixin */
       @mixin body(
          $align: left, 

@@ -4,7 +4,7 @@
       $bg-color: none, 
       $shadow: false, 
       $bg-image: none, 
-      $pattern: none, 
+      $overlay: none, 
       $jumbo: false, 
       $bg-attachment: fixed
    ){
@@ -16,17 +16,17 @@
          @extend %section-inner-shadow;            
       }
       @if $bg-image != "none"{
-         @if $pattern == "none" {        
+         @if $overlay == "none" {        
             background: url($bg-image) center 0 no-repeat;
             background-attachment: $bg-attachment; 
             @include bg-size(cover);
             
          } @else {
-            @if $pattern == "light"{
-               background: url($pattern-light) repeat,
+            @if $overlay == "light"{
+               background: url($overlay-light) repeat,
                            url($bg-image) center 0 no-repeat;
-            } @else if $pattern == "dark"{
-               background: url($pattern-dark) repeat,
+            } @else if $overlay == "dark"{
+               background: url($overlay-dark) repeat,
                            url($bg-image) center 0 no-repeat;
             }               
                background-attachment: fixed, $bg-attachment;

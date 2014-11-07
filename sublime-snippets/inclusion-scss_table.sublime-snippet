@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+$1{		
+	@include table(\$align: $2left, \$position: $3center, \$extra: $4false, \$color: $5dark, \$font: $6serif);
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>ita</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css, source.scss</scope>
+</snippet>
