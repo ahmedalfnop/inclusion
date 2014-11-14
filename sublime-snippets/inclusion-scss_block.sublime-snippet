@@ -1,7 +1,7 @@
 <snippet>
 	<content><![CDATA[
 $1{		
-	@include block(\$position: $2center, \$extra: $3false, \$spoiler: $4none, \$spoiler-color: $5dark);
+	@include block(\$position: $2center, \$extra: $3false, \$spoiler: $4false, \$spoiler-color: $5dark);
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
