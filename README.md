@@ -82,6 +82,8 @@ I don't like to keep in mind all those mixin names, so I've created this snippet
 * No-preprocessor version
 
 ## Changelog
+* v1.3 (November 20, 2014)
+  - Standalone anchor scrolling script added
 * v1.2 (November 08, 2014)
   - Sublime snippets added, selection mixin added
 * v1.1 (November 04, 2014)

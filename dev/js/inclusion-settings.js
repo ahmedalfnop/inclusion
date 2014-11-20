@@ -10,6 +10,13 @@ $(function(){
 	*/
 	$(".js-nav").navKit({ state: "closed" }); //apply plugin to navbar with .js-nav classname
 
+	/* jQuery anchorScroll plugin init and settings, fallback for pages with no navbar but with anchor links
+	*  Disabled by default!
+	*
+	* anchor: "js-anchor"	anchor class name link for smooth scrolling
+	*/
+	//apply plugin to link with .js-anchor classname
+	// $(".js-anchor").anchorScroll(); 
 
 	/* jQuery Lazy load plugin init and settings
 	* more settings here http://www.appelsiini.net/projects/lazyload
