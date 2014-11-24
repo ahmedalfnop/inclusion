@@ -1,6 +1,7 @@
 /* Section element */       
    @mixin section(
       $align: inherit, 
+      $color: inherit,
       $bg-color: none, 
       $shadow: false, 
       $bg-image: none, 
@@ -9,8 +10,9 @@
       $bg-attachment: fixed
    ){
       @extend %section;  
-      @extend %section-align-#{$align} !optional;   
-      @extend %sect-bg-color-#{$bg-color} !optional;
+      @extend %section-align-#{$align} !optional; 
+      @extend %section-color-#{$color} !optional;  
+      @extend %section-bg-color-#{$bg-color} !optional;
                
       @if $shadow != false{           
          @extend %section-inner-shadow;            
@@ -57,10 +59,16 @@
             text-align: #{nth($position, 1)};
          }
       }   
+   /* Section color */
+      @each $color in $colors{
+         %section-color-#{nth($color, 1)}{
+            color: #{nth($color, 2)};
+         }
+      }     
 
    /* Section bg-color */
       @each $color in $colors{
-         %sect-bg-color-#{nth($color, 1)}{
+         %section-bg-color-#{nth($color, 1)}{
             background-color: #{nth($color, 2)};
          }
       } 

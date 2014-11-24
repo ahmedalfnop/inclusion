@@ -1,8 +1,8 @@
 <snippet>
 	<content><![CDATA[
 $1{		
-	@include section(\$align: $2inherit, \$bg-color: $3none, \$shadow: $4false, \$bg-image: $5none, 
-				 \$overlay: $6none, \$jumbo: $7false, \$bg-attachment: $8fixed); 
+	@include section(\$align: $2inherit, \$color: $3none, \$bg-color: $4none, \$shadow: $5false, 
+					 \$bg-image: $6none, \$overlay: $7none, \$jumbo: $8false, \$bg-attachment: $9fixed); 
 }				 
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

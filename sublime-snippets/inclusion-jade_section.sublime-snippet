@@ -1,12 +1,12 @@
 <snippet>
 	<content><![CDATA[
-<!-- $1 section start -->
+// $1 section start
 section#$1.$1
 	.container
 		h2.$2 $3
 		$4
 
-<!-- $1 section end -->
+// $1 section end
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>ise</tabTrigger>

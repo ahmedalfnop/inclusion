@@ -57,7 +57,7 @@ This project based on [frontend-scaffold](https://github.com/orlovmax/front-end-
 
 For this project I've used BEM naming: `.block` for independent block. `.block__element` for elements inside this block. And `.block_modifier` for modification of this block.
 
-States of the form error messages use prefix `.is-*`. For example `.is-email` - means email error, `.is-success` - success of form validation and sending.
+States of the form error messages use prefix `.is-*`. For example `.is-closed` - means closed nav or spoiler, `.is-opened` - open navbar and changed.
 
 Js hooks use prefix `.js-*`.
 
@@ -82,6 +82,8 @@ I don't like to keep in mind all those mixin names, so I've created this snippet
 * No-preprocessor version
 
 ## Changelog
+* v1.4 (November 24, 2014)
+  - Added $color option for sections
 * v1.3 (November 20, 2014)
   - Standalone anchor scrolling script added
 * v1.2 (November 08, 2014)
