@@ -94,12 +94,10 @@ I don't like to keep in mind all those mixin names, so I've created this snippet
   - Initial commit
 
 ## Credits
-* [jQuery](http://jquery.com) jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers.
-* [Lazy load plugin](http://www.appelsiini.net/projects/lazyload) Lazy Load is delays loading of images in long web pages. Images outside of viewport are not loaded until user scrolls to them.
-* [Intense Image Viewer](http://tholman.com/intense-images/) A javascript library for viewing images in a fully full screen.
-* [Prism syntax highlighter](http://prismjs.com/download.html) Prism is a lightweight, extensible syntax highlighter, built with modern web standards in mind.
-* [Lazy load plugin](http://www.appelsiini.net/projects/lazyload) Lazy Load is delays loading of images in long web pages. Images outside of viewport are not loaded until user scrolls to them.
-* [Detect Mobile Browsers](http://detectmobilebrowsers.com/) Open source mobile phone detection
+* [Lazy load plugin](http://www.appelsiini.net/projects/lazyload)
+* [Intense Image Viewer](http://tholman.com/intense-images/)
+* [Prism syntax highlighter](http://prismjs.com/download.html)
+* [Detect Mobile Browsers](http://detectmobilebrowsers.com/)
 * Product mockup created with [http://frame.lab25.co.uk/](http://frame.lab25.co.uk/)
 
 ## License
