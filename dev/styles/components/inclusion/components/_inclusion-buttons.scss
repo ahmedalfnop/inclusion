@@ -25,7 +25,7 @@
          background-color: transparent;
          -webkit-border-radius: 0;
                  border-radius: 0;
-         border: 2px solid;
+         border: 1px solid;
          font-family: inherit;
          line-height: 1;
          text-decoration: none;
@@ -69,8 +69,8 @@
             color: nth($color,2);   
             @include transition(all, .2s);
             &:hover{
-               background-color: nth($color,8);
-               color: nth($color,6);
+               border-color: nth($color,8);
+               color: nth($color,4);
             }  
          }
          %button-#{nth($color,1)}{               

@@ -522,7 +522,7 @@ a:focus {
 	display: block;
 	background-color: transparent;
 	border-radius: 0;
-	border: 2px solid;
+	border: 1px solid;
 	font-family: inherit;
 	line-height: 1;
 	text-decoration: none;
@@ -586,8 +586,8 @@ a:focus {
 .demo__button-large:hover,
 .demo__button-left:hover,
 .demo__button-right:hover {
-	background-color: #a3a3a3;
-	color: #efefef;
+	border-color: #a3a3a3;
+	color: #777777;
 }
 
 .demo__button-disabled {
@@ -901,6 +901,8 @@ a:focus {
 .main-footer {
 	text-align: center;
 }
+
+/* Section color */
 
 /* Section bg-color */
 
