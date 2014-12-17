@@ -158,13 +158,13 @@ body{
 			@include blockquote($align: center);
 		}
 			&__bq-center-extra{
-				@include blockquote($align: center, $position: none, $extra: true);
+				@include blockquote($align: center, $position: normal, $extra: true);
 			}
 		&__bq-left{
 			@include blockquote($align: left);
 		}		
 			&__bq-left-extra{
-				@include blockquote($align: left, $position: none, $extra: true);
+				@include blockquote($align: left, $position: normal, $extra: true);
 			}
 			&__bq-float-left{
 				@include blockquote($align: left, $position: left);
@@ -176,7 +176,7 @@ body{
 			@include blockquote($align: right);
 		}
 			&__bq-right-extra{
-				@include blockquote($align: right, $position: none, $extra: true);
+				@include blockquote($align: right, $position: normal, $extra: true);
 			}
 			&__bq-float-right{
 				@include blockquote($align: right, $position: right);

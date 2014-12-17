@@ -1886,40 +1886,6 @@ blockquote cite:before {
 	cursor: help;
 }
 
-.demo__intro-note,
-.demo__note { /*@extend %bq-center !optional;*/
-}
-
-.demo__bq-center { /*@extend %bq-center !optional;*/
-}
-
-.demo__bq-center-extra { /*@extend %bq-center !optional;*/
-}
-
-.demo__bq-left { /*@extend %bq-left !optional;*/
-}
-
-.demo__bq-left-extra { /*@extend %bq-left !optional;*/
-}
-
-.demo__bq-float-left { /*@extend %bq-left !optional;*/
-}
-
-.demo__bq-float-left-extra { /*@extend %bq-left !optional;*/
-}
-
-.demo__bq-right { /*@extend %bq-right !optional;*/
-}
-
-.demo__bq-right-extra { /*@extend %bq-right !optional;*/
-}
-
-.demo__bq-float-right { /*@extend %bq-right !optional;*/
-}
-
-.demo__bq-float-right-extra { /*@extend %bq-right !optional;*/
-}
-
 .grid { /* Grid width and margin math for calc() and fallback */ /* Check gutter width and it fallback for `auto` values, if false - return no math variant */ /* Check gutter value, if its units not equal to grid units - return calc math with fallback<
    * else - common math */
 	width: 100%;

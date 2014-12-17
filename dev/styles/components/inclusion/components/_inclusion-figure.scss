@@ -7,7 +7,12 @@
    @extend %figure-elem-#{$position} !optional;
    @extend %caption-#{$position}-#{$color} !optional;
    @if $type != "image"{
-      @extend %figure-code-#{$color} !optional;
+      @if $type == "code"{
+         @extend %figure-code-#{$color} !optional;
+      } @else if $type == "video"{
+         @extend %figure-video !optional;
+      }
+      
    }
    @if $extra != false{
       @extend %figure-#{$position}-extra !optional; 
@@ -56,6 +61,23 @@
          }                  
       } 
    }     
+      %figure-video{
+         &>div {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 20px;
+            padding-bottom: 60%;  
+            
+            &>iframe{
+               position: absolute;
+               top: 0;
+               left: 0;
+               width: 100%;
+               height: 100%;
+            } 
+         }
+      }
 
  /* Figure alignement */
    @each $position in $align{

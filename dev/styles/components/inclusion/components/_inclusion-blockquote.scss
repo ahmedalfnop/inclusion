@@ -28,14 +28,16 @@
          $color: dark, 
          $font: inherit
       ){          
-         /*@extend %bq-#{$align} !optional;*/
          @extend %bq-#{$align}-#{$color} !optional;
          @extend %bq-font-#{$font} !optional;
          @extend %bq-elem-#{$position} !optional;
          
-         @if $extra != false{            
-            @extend %bq-#{$align}-extra !optional;
-            @extend %bq-#{$position}-extra !optional;
+         @if $extra != false{
+            @if $position == "normal"{
+               @extend %bq-#{$align}-extra !optional;
+            } @else {            
+               @extend %bq-#{$position}-extra !optional;
+            }
          }   
       }  
       
