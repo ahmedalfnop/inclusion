@@ -1,0 +1,74 @@
+/* Common table */
+table{
+   max-width: 100%;
+   margin: 10px auto 20px;
+   border-collapse: collapse;
+   border-spacing: 0;
+   font-size: 16px;
+   line-height: 1.2; 
+   
+   & {
+      th, .group{
+         font-weight: bold;
+         text-align: center;
+      }
+      th, td{    
+         padding: 15px 10px;
+         vertical-align: middle;
+         @media screen and (max-width: 480px){
+            padding: 5px 2px;
+         }
+      }
+      caption{
+         caption-side: bottom;
+         font-family: $font-condensed;
+         margin: 10px 0 5px;
+         padding: 0 10px;
+         font-size: 25px;
+      }
+   }
+}
+
+@mixin table(
+   $align: left, 
+   $position: center, 
+   $extra: false, 
+   $color: dark, 
+   $font: serif
+){   
+   text-align: #{$align};          
+
+   @each $item in $colors{
+      @if $color == nth($item, 1){
+         color: #{nth($item, 4)};
+         & {
+            th{
+               border-bottom: 2px solid #{nth($item, 2)};
+            }
+            tr{
+               border-bottom: 1px solid #{nth($item, 4)};
+            }
+            td:not(:last-of-type){
+               border-right: 1px solid #{nth($item, 4)};
+            }
+            th, .group{
+               color: #{nth($item, 2)};
+            }
+         }           
+      }
+   }
+
+   @each $item in $fonts{
+      @if $font == nth($item, 1){
+         font-family: #{nth($item, 2)};
+      }
+   }
+
+   @if $position != "normal"{
+      @include common-elem(#{$position});
+   }        
+   
+   @if $extra != false{
+      @include common-elem-extra(#{$position});
+   }   
+}

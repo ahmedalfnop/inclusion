@@ -1,0 +1,90 @@
+      blockquote{
+         font-family: $font-serif;
+         display: block;
+         clear: both;
+         padding: 10px 0 5px;
+         margin-bottom: 20px;
+         
+         & p{
+            font-style: italic;
+         }      
+         & cite{
+            display: block;
+            margin-top: 10px;  
+            font-size: 20px;
+            @media screen and (max-width: 960px){
+              font-size: 18px;
+            }
+            
+            &:before{
+               content: "\2014";
+            }
+         }
+      }
+      @mixin blockquote(
+         $align: center, 
+         $position: normal, 
+         $extra: false, 
+         $color: dark, 
+         $font: inherit
+      ){          
+         @each $item in $colors{
+            @if $color == nth($item, 1){    
+               @if $align == "center"{               
+                  text-align: justify;
+                  color: #{nth($item, 4)};                 
+                         
+                  & p:first-child:before{         
+                     content: "\201C";
+                     padding-right: 10px;
+                     font-size: 60px;
+                     line-height: 0;
+                     vertical-align: middle; 
+                  }    
+                  & cite{
+                     text-align: right;
+                     color: #{nth($item, 2)};
+               
+                     & a{            
+                        color: #{nth($item, 2)};
+                     }
+                  }
+               } @else if $align == "left" or $align == "right"{
+                  padding-#{$align}: 15px;
+                  text-align: #{$align}; 
+                  color: #{nth($item, 4)};
+                  @include border(#{$align}, #{nth($item, 1)});
+                  
+                  & cite{
+                     @if $align == "left"{
+                        text-align: right;
+                     } @else if  $align == "right"{
+                        text-align: left;    
+                     }
+                     color: #{nth($item, 2)};                  
+                     & a{            
+                        color: #{nth($item, 2)};
+                     }
+                  }
+               }
+            }
+         }
+         
+         @each $item in $fonts{
+            @if $font == nth($item, 1) and $font != "inherit"{
+               font-family: #{nth($item, 2)};
+            }
+         }
+
+         @if $position != "normal"{
+            @include common-elem(#{$position});
+         }
+         
+         @if $extra != false{
+            @if $position == "normal"{
+               @include common-elem-extra(#{$align});
+            } @else {            
+               @include common-elem-extra(#{$position});
+            }
+         }   
+      }  

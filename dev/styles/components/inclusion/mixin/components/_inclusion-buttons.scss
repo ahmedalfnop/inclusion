@@ -1,0 +1,133 @@
+/* Common button */
+   @mixin button(
+      $position: none,
+      $size: regular, 
+      $color: dark, 
+      $font: sans, 
+      $state: enabled
+   ){        
+      display: block;
+      background-color: transparent;
+      -webkit-border-radius: 0;
+              border-radius: 0;
+      border: 1px solid;
+      font-family: inherit;
+      line-height: 1;
+      text-decoration: none;
+      text-align: center;  
+             
+      @each $item in $colors{
+         @if $color == nth($item,1){
+            @if $state == "enabled"{
+               border-color: nth($item,4);
+               color: nth($item,2);   
+               @include transition(all, .2s);
+               &:hover{
+                  border-color: nth($item,8);
+                  color: nth($item,4);
+               }      
+            } @else{              
+               border-color: nth($item,4);
+               color: nth($item,4);
+               cursor: not-allowed;
+               @include opacity(0.5);
+            }  
+         }         
+      }         
+      @each $item in $fonts{
+         @if $font == nth($item, 1){
+            font-family: #{nth($item, 2)};
+         }  
+      }
+      @if $size == "small"{
+         min-width: 150px;
+         max-width: 200px;
+         min-height: 30px;
+         padding: 2px 4px;
+         font-size: 18px;
+      } @else if $size == "regular"{
+         min-width: 200px;
+         max-width: 250px;
+         min-height: 40px;
+         padding: 4px 8px;
+         font-size: 22px;
+      } @else if $size == "large"{
+         min-width: 250px;
+         max-width: 300px;
+         min-height: 50px;
+         padding: 8px 16px;
+         font-size: 26px; 
+      }
+      @if $position == "none"{
+         margin: 5px auto;
+      } @else if $position == "left"{
+         float: left;
+         margin: 5px 3% 5px 0;
+      } @else if $position == "right"{
+         float: right;
+         margin: 5px 0 5px 3%; 
+      }
+   } 
+      
+
+/* Iconic button */
+   @mixin icon-button(
+      $icon:down, 
+      $shape: rect, 
+      $color:dark
+   ){
+      display: block;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      overflow: hidden;
+      font-size: 0;
+      text-decoration: none;
+      @include transition(all,.5s);
+
+      &:after{
+         display: inline-block;
+         font-family: "inclusion";
+         font-style: normal;
+         font-weight: normal;
+         font-variant: normal;
+         text-transform: none;
+         -webkit-font-smoothing: antialiased;
+         -moz-osx-font-smoothing: grayscale;
+         font-size: 35px;
+         line-height: 45px;
+      }
+               
+      &:hover{
+         @include scale(1.2);
+      }
+      @each $item in $icons {
+         @if $icon == nth($item, 1){
+            &:after{
+               content:"#{nth($item, 2)}";
+            }
+         }   
+      }
+      @each $item in $colors{
+         @if $color == nth($item, 1){
+            border: 2px solid #{nth($item, 2)};
+               color: #{nth($item, 2)};
+            &:after{
+               color: #{nth($item, 2)};
+            }
+         }
+      }
+      @if $shape == "rect"{           
+         @include rotate(45deg);
+         
+         &:after{
+            @include rotate(-45deg);
+            @include transition(all,.5s);
+         }
+         &:hover:after{
+            @include rotate(0deg);
+         }
+      }@else if $shape == "round"{
+         @include rounded(50%);
+      }
+   } 

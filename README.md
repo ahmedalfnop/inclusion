@@ -53,6 +53,11 @@ This project based on [frontend-scaffold](https://github.com/orlovmax/front-end-
 
 `/build/` folder - build version, in our case - demo.
 
+UPDATE: `/styles/` folder in `/dev/` contain two version of framework - extend and mixin. 
+
+- `Extend` version based on placeholders which make code more dry but if we have a lot of similar elements code will become messy. This version really cool for projects that have custom markup classnames with the same styles.
+- `Mixin` version based on mixins so compiled code is more pretty and readable but there are duplication of mixin content for each element. In result we have a bigger stylesheet. This version works fine for small projects. Must say, that stylesheet size at all isn't so critical for common project that has built with `mixin` version.
+
 ### HTML and CSS naming
 
 For this project I've used BEM naming: `.block` for independent block. `.block__element` for elements inside this block. And `.block_modifier` for modification of this block.
@@ -82,6 +87,10 @@ I don't like to keep in mind all those mixin names, so I've created this snippet
 * No-preprocessor version
 
 ## Changelog
+* v2.0 (December 18, 2014)
+  - Added mixin version of framework
+* v1.5 (December 16, 2014)
+  - Added video option for figure element
 * v1.4 (November 24, 2014)
   - Added $color option for sections
 * v1.3 (November 20, 2014)
