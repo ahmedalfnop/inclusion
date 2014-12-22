@@ -31,7 +31,8 @@
                background: url($overlay-dark) repeat,
                            url($bg-image) center 0 no-repeat;
             }               
-               background-attachment: fixed, $bg-attachment;
+               background-attachment: fixed, $bg-attachment; 
+               background-color: $accent-color;
                @include bg-size(auto, cover);
          } 
       } 

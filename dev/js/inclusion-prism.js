@@ -4,7 +4,13 @@
  * @author Lea Verou http://lea.verou.me
  *
  */
-
+(function(){
+// IE etect util    
+ function isIE () {
+  var myNav = navigator.userAgent.toLowerCase();
+  return (myNav.indexOf('msie') != -1) ? parseInt(myNav.split('msie')[1]) : false;
+}
+if ( !isIE () | isIE () > 8 ) {
 self = "undefined" != typeof window ? window : "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? self : {};
 var Prism = function() {
     var e = /\blang(?:uage)?-(?!\*)(\w+)\b/i,
@@ -165,6 +171,7 @@ var Prism = function() {
     return r = r[r.length - 1], r && (t.filename = r.src, document.addEventListener && !r.hasAttribute("data-manual") && document.addEventListener("DOMContentLoaded", t.highlightAll)), self.Prism
 }();
 "undefined" != typeof module && module.exports && (module.exports = Prism);;
+
 Prism.languages.markup = {
     comment: /<!--[\w\W]*?-->/g,
     prolog: /<\?.+?\?>/,
@@ -331,3 +338,5 @@ Prism.languages.scss = Prism.languages.extend("css", {
     "null": /\b(null)\b/g,
     operator: /\s+([-+]{1,2}|={1,2}|!=|\|?\||\?|\*|\/|\%)\s+/g
 });;
+};
+})();

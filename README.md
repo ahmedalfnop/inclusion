@@ -87,6 +87,8 @@ I don't like to keep in mind all those mixin names, so I've created this snippet
 * No-preprocessor version
 
 ## Changelog
+* v2.1 (December 22, 2014)
+  - Added IE8 support
 * v2.0 (December 18, 2014)
   - Added mixin version of framework
 * v1.5 (December 16, 2014)

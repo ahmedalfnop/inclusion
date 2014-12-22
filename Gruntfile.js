@@ -25,6 +25,11 @@ module.exports = function(grunt) {
                 ext: '.min.js'
             }]
           },
+          ie: {
+            files: {
+                'build/js/ie/ie.min.js': 'dev/js/ie/ie.js'
+            }
+          },
           main: {
               files: {
                   'build/js/inclusion.min.js': 'dev/js/inclusion.js'
@@ -93,7 +98,8 @@ module.exports = function(grunt) {
       //Minify and organize *.css files  
         csso: {
           options: {
-            keepSpecialComments: '*'
+            keepSpecialComments: '*',
+            restructure: false
           },
           main: {
             files:[{
@@ -154,9 +160,9 @@ module.exports = function(grunt) {
               expand: true, 
               cwd: 'dev/js/',
               src: [
-                '**/assembled.js', 
+                '**/inclusion.js', 
                 '**/vendor.js', 
-                '**/head.js'],
+                '**/ie.js'],
               dest: 'build/js/'
             }]
           },  
@@ -198,6 +204,25 @@ module.exports = function(grunt) {
         bower_concat: {
           main: {
             dest: 'dev/js/vendor/vendor.js'
+          }
+        },
+        bower_concat: {
+          vendor: {
+            dest: 'dev/js/vendor/vendor.js',
+            exclude: ['respond', 'html5shiv'],
+            bowerOptions: {
+              relative: true
+            }
+          },
+          ie: {
+            dest: 'dev/js/ie/ie.js',
+            exclude: ['jquery'],
+            mainFiles: {
+              'html5shiv': 'dist/html5shiv-printshiv.js'
+            },
+            bowerOptions: {
+              relative: true
+            }
           }
         },
 
