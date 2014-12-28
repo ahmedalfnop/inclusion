@@ -73,6 +73,8 @@ Inclusion plugins require jQuery library. So this dependency was included into `
 I don't like to keep in mind all those mixin names, so I've created this snippets for Subime text2, with shortkeys like `ifi` - which means inclusion figure image. In markup (jade or html) it will create markup for figure element with img tag with necessary classnames and figcaption. In scss it will create empty rule with included mixin. In both cases there will be multiple cursor anchors. Soon I'll add a list with shortkeys.
 
 ## Live examples
+* [Inclusion jekyll theme for my blog](http://blog.orlovmax.com/)
+* [Miniature wookie](http://orlovmax.com/lab/tools/miniature-wookie)
 * [Simple contact form](http://orlovmax.com/lab/simple-contact-form)
 * [Browser update screen](http://orlovmax.com/lab/browser-update-screen)
 * [Pixel perfect tool](http://orlovmax.com/lab/tools/pixel-perfect-dev)
@@ -83,7 +85,6 @@ I don't like to keep in mind all those mixin names, so I've created this snippet
 ## TODO
 * Shortkeys list for snippets. Make snippet completion or something like that.
 * Less version
-* Version with mixins instead extends
 * No-preprocessor version
 
 ## Changelog
