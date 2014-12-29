@@ -29,7 +29,7 @@ $column_height: auto;
 	    #{$property}:         calc(#{$expression});    
 	}
 	/* Clearfix */
-	%gs_clear{
+	@mixin gs_clear{
 		clear:both;
 		&:before,
 		&:after {
@@ -86,7 +86,7 @@ $column_height: auto;
 				width: $gs_width;
 				margin: $half-gutter-height $gs_gutter-width;
 			}
-			@extend %gs_clear;
+			@include gs_clear;
 		}
 
 	/* Column mixin: there are five variables, column count for current element, 

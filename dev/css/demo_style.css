@@ -167,21 +167,6 @@ input[type=submit] {
 
 /* Clearfix */
 
-.grid,
-.grid__row {
-	clear: both;
-}
-
-.grid:before,
-.grid__row:before,
-.grid:after,
-.grid__row:after {
-	display: block;
-	content: '';
-	clear: both;
-	height: 0;
-}
-
 /* GS Mixins */
 
 /* Grid system container mixin, should be used for grid container and rows. */
@@ -1891,7 +1876,16 @@ blockquote cite:before {
    * else - common math */
 	width: 100%;
 	margin: 0 0;
+	clear: both;
 	margin-bottom: 20px; /* Common cdemo column styles */ /* Fluid responsive grid styles */ /* Fluid push/pull grid styles */ /* Nested responsive grid styles */
+}
+
+.grid:before,
+.grid:after {
+	display: block;
+	content: '';
+	clear: both;
+	height: 0;
 }
 
 .grid .col {
@@ -1904,6 +1898,15 @@ blockquote cite:before {
    * else - common math */
 	width: 100%;
 	margin: 0 0;
+	clear: both;
+}
+
+.grid__row:before,
+.grid__row:after {
+	display: block;
+	content: '';
+	clear: both;
+	height: 0;
 }
 
 .grid__resp-1 {
