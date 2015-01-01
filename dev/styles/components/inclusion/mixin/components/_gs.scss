@@ -12,14 +12,7 @@ $column_gutter-height: 2%;
 $column_gutter-width: 2%;	
 $column_gutter-height-fallback: 2%;	
 $column_gutter-width-fallback: 2%;
-$column_height: auto;		
-
-/* Predefined class names for generator */
-// $gs-container: 'gs-container';
-// $gs-column: 'gs-column';
-// $gs-row: 'gs-row';
-// $gs-push: 'gs-push';
-// $gs-pull: 'gs-pull';
+$column_height: auto;	
 
 /*Internal mixins */
 	/* Calc() mixin */
@@ -281,22 +274,3 @@ $column_height: auto;
 				margin-right: $position_width;
 			}
 		} 
-
-
-/* Generate classnames for grid */
-// .#{$gs-container}{
-// 	@include gs();
-// }
-// @for $i from 1 through $column_total-count{
-// 	.#{$gs-column}-#{$i}{
-// 		@include gs-column($i);
-// 	}
-// }
-// @for $i from 1 through ($column_total-count - 1){	
-// 	.#{$gs-push}-#{$i}{
-// 		@include gs-push($i);
-// 	}
-// 	.#{$gs-pull}-#{$i}{
-// 		@include gs-pull($i);
-// 	}
-// }
