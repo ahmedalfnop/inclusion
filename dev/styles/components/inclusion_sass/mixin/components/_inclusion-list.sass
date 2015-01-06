@@ -1,0 +1,24 @@
+=list($type: ul, $position: normal, $extra: false, $color: dark, $font: serif)
+	list-style-position: inside
+	font-size: 20px
+	line-height: 1.4
+	font-weight: 400
+	text-align: left
+	& ul, & ol
+		margin-left: 20px
+	@media screen and (max-width: 960px)
+		font-size: 18px
+	@if $type == "ul"
+		list-style-type: square
+	@else if $type == "ol"
+		list-style-type: decimal
+	@each $item in $colors
+		@if $color == nth($item, 1)
+			color: #{nth($item, 4)}
+	@each $item in $fonts
+		@if $font == nth($item, 1)
+			font-family: #{nth($item, 2)}
+	@if $position != "normal"
+		+common-elem(#{$position})
+	@if $extra != false
+		+common-elem-extra(#{$position})

@@ -1,0 +1,49 @@
+// Section element
+
+=section($align: inherit, $color: inherit, $bg-color: none, $shadow: false, $bg-image: none, $overlay: none, $jumbo: false, $bg-attachment: fixed)
+	position: relative
+	width: 100%
+	padding: 30px 20px
+	text-align: #{$align}
+	@each $item in $colors
+		@if $color == nth($item, 1)
+			color: #{nth($item, 2)}
+	@each $item in $colors
+		@if $bg-color != "none" and $bg-color == nth($item, 1)
+			background-color: #{nth($item, 2)}
+	@if $shadow != false
+		+multiple-box-shadow(inset 0 3px 3px -2px $shadow-color, inset 0 -3px 3px -2px $shadow-color)
+	@if $bg-image != "none"
+		@if $overlay == "none"
+			background: url($bg-image) center 0 no-repeat
+			background-attachment: $bg-attachment
+			+bg-size(cover)
+		@else
+			@if $overlay == "light"
+				background: url($overlay-light) repeat, url($bg-image) center 0 no-repeat
+			@else if $overlay == "dark"
+				background: url($overlay-dark) repeat, url($bg-image) center 0 no-repeat
+			background-attachment: fixed, $bg-attachment
+			background-color: $accent-color
+			+bg-size(auto, cover)
+	@if $jumbo != false
+		min-height: 100%
+		padding: 10% 20px 100px
+
+// Page chapter
+=chapter($divider: bottom)
+	@if $divider == "none"
+		+clearfix
+	@else
+		$position: top before, bottom after
+		@each $side in $position
+			@if $divider == nth($side, 1)
+				clear: both
+				&:#{nth($side, 2)}
+					content: ""
+					display: block
+					width: 30%
+					height: 0
+					margin: 20px auto
+					border-top: 1px dotted $color-light-darken
+					clear: both
