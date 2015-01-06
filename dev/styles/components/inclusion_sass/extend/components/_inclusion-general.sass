@@ -1,0 +1,66 @@
+html, body, .main
+	width: 100%
+	height: 100%
+
+// Selection mixin
+=selection($color: dark)
+	@if $color == "dark"
+		*::selection
+			color: $color-light
+			background: $color-dark
+		*::-moz-selection
+			color: $color-light
+			background: $color-dark
+	@else
+		*::selection
+			color: $color-dark
+			background: $color-light
+		*::-moz-selection
+			color: $color-dark
+			background: $color-light
+
+// Body mixin
+
+=body($align: left, $color: dark)
+	@extend %body-#{$color}-#{$align} !optional
+
+@each $color in $colors
+	@each $side in $align
+		%body-#{nth($color, 1)}-#{nth($side, 1)}
+			background: nth($color, 2) url(nth($color, 9)) fixed repeat
+			font-family: $font-sans
+			color: nth($color, 6)
+			text-align: nth($side, 1)
+
+=container
+	@extend %clearfix
+	position: relative
+	max-width: 1200px
+	margin: 0 auto
+	padding: 0 120px
+	overflow: hidden
+	@media screen and (max-width: 960px)
+		padding: 0 60px
+	@media screen and (max-width: 640px)
+		padding: 0
+		-ms-overflow-y: hidden
+		overflow-y: hidden
+
+img
+	display: block
+	/*width: 100%;
+	max-width: 100%
+	margin: auto
+
+%hidentext
+	text-indent: 100%
+	white-space: nowrap
+	overflow: hidden
+
+%clearfix
+	&:before,
+	&:after
+		display: block
+		content: ''
+		clear: both
+		height: 0

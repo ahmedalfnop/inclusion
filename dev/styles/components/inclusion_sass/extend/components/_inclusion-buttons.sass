@@ -1,0 +1,138 @@
+// Common buttons
+
+=button($position: none, $size: regular, $color: dark, $font: sans, $state: enabled)
+	@extend %button
+	@if $state == "enabled"
+		@extend %button-#{$color}-behavior !optional
+	@else
+		@extend %button-#{$color} !optional
+	@extend %button-font-#{$font} !optional
+	@extend %button-#{$size} !optional
+	@extend %button-float-#{$position} !optional
+
+// Common button
+%button
+	display: block
+	background-color: transparent
+	-webkit-border-radius: 0
+	border-radius: 0
+	border: 1px solid
+	font-family: inherit
+	line-height: 1
+	text-decoration: none
+	text-align: center
+
+// Button font
+@each $font in $fonts
+	%button-font-#{nth($font, 1)}
+		font-family: #{nth($font, 2)}
+
+// Button size
+%button-small
+	min-width: 150px
+	max-width: 200px
+	min-height: 30px
+	padding: 2px 4px
+	font-size: 18px
+
+%button-regular
+	min-width: 200px
+	max-width: 250px
+	min-height: 40px
+	padding: 4px 8px
+	font-size: 22px
+
+%button-large
+	min-width: 250px
+	max-width: 300px
+	min-height: 50px
+	padding: 8px 16px
+	font-size: 26px
+
+// Button color
+@each $color in $colors
+	%button-#{nth($color, 1)}-behavior
+		border-color: nth($color, 4)
+		color: nth($color, 2)
+		+transition(all, 0.2s)
+		&:hover
+			border-color: nth($color, 8)
+			color: nth($color, 4)
+	%button-#{nth($color, 1)}
+		border-color: nth($color, 4)
+		color: nth($color, 4)
+		cursor: not-allowed
+		+opacity(0.5)
+
+// Button float
+%button-float-left
+	float: left
+	margin: 5px 3% 5px 0
+
+%button-float-right
+	float: right
+	margin: 5px 0 5px 3%
+
+%button-float-none
+	margin: 5px auto
+
+// Iconic buttons
+
+=icon-button($icon: down, $shape: rect, $color: dark)
+	@extend %icon-button
+	@extend %icon-button-#{$color} !optional
+	@extend %icon-button-#{$shape} !optional
+	@extend %icon-button-#{$icon} !optional
+
+// Common icon-button
+%icons
+	display: inline-block
+	font-family: "inclusion"
+	font-style: normal
+	font-weight: normal
+	font-variant: normal
+	text-transform: none
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+
+%icon-button
+	display: block
+	width: 50px
+	height: 50px
+	text-align: center
+	overflow: hidden
+	font-size: 0
+	text-decoration: none
+	+transition(all, 0.5s)
+	&:after
+		@extend %icons
+		font-size: 35px
+		line-height: 45px
+	&:hover
+		+scale(1.2)
+
+// Icon-button color
+@each $color in $colors
+	%icon-button-#{nth($color, 1)}
+		border: 2px solid #{nth($color, 2)}
+		color: #{nth($color, 2)}
+		&:after
+			color: #{nth($color, 2)}
+
+// Icon-button icon
+@each $icon in $icons
+	%icon-button-#{nth($icon, 1)}
+		&:after
+			content: #{nth($icon, 2)}
+
+// Icon-button shape
+%icon-button-rect
+	+rotate(45deg)
+	&:after
+		+rotate(-45deg)
+		+transition(all, 0.5s)
+	&:hover:after
+		+rotate(0deg)
+
+%icon-button-round
+	+rounded(50%)

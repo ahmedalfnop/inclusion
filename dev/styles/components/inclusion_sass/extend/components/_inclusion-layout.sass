@@ -1,0 +1,79 @@
+// Section element
+
+=section($align: inherit, $color: inherit, $bg-color: none, $shadow: false, $bg-image: none, $overlay: none, $jumbo: false, $bg-attachment: fixed)
+	@extend %section
+	@extend %section-align-#{$align} !optional
+	@extend %section-color-#{$color} !optional
+	@extend %section-bg-color-#{$bg-color} !optional
+	@if $shadow != false
+		@extend %section-inner-shadow
+	@if $bg-image != "none"
+		@if $overlay == "none"
+			background: url($bg-image) center 0 no-repeat
+			background-attachment: $bg-attachment
+			+bg-size(cover)
+		@else
+			@if $overlay == "light"
+				background: url($overlay-light) repeat, url($bg-image) center 0 no-repeat
+			@else if $overlay == "dark"
+				background: url($overlay-dark) repeat, url($bg-image) center 0 no-repeat
+			background-attachment: fixed, $bg-attachment
+			background-color: $accent-color
+			+bg-size(auto, cover)
+	@if $jumbo != false
+		@extend %section-jumbo
+
+// Common section
+%section
+	position: relative
+	width: 100%
+	padding: 30px 20px
+
+// Section jumbo
+%section-jumbo
+	min-height: 100%
+	padding: 10% 20px 100px
+
+// Section alignement
+@each $position in $align
+	%section-align-#{nth($position, 1)}
+		text-align: #{nth($position, 1)}
+
+// Section color
+@each $color in $colors
+	%section-color-#{nth($color, 1)}
+		color: #{nth($color, 2)}
+
+// Section bg-color
+@each $color in $colors
+	%section-bg-color-#{nth($color, 1)}
+		background-color: #{nth($color, 2)}
+
+// Section shadow
+%section-inner-shadow
+	+multiple-box-shadow(inset 0 3px 3px -2px $shadow-color, inset 0 -3px 3px -2px $shadow-color)
+
+// Page chapter
+=chapter($divider: bottom)
+	@if $divider == "none"
+		@extend %clearfix
+	@else
+		@extend %chapter-#{$divider} !optional
+
+$position: top before, bottom after
+
+@each $side in $position
+	%chapter-#{nth($side, 1)}
+		clear: both
+		&:#{nth($side, 2)}
+			@extend %chapter-border
+
+// Common chapter border
+%chapter-border
+	content: ""
+	display: block
+	width: 30%
+	height: 0
+	margin: 20px auto
+	border-top: 1px dotted $color-light-darken
+	clear: both
