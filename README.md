@@ -73,7 +73,7 @@ Inclusion plugins require jQuery library. So this dependency was included into `
 I don't like to keep in mind all those mixin names, so I've created this snippets for Subime text2, with shortkeys like `ifi` - which means inclusion figure image. In markup (jade or html) it will create markup for figure element with img tag with necessary classnames and figcaption. In scss it will create empty rule with included mixin. In both cases there will be multiple cursor anchors. Soon I'll add a list with shortkeys.
 
 ## Live examples
-* [Inclusion jekyll theme for my blog](http://blog.orlovmax.com/)
+* [Inclusion jekyll theme for my blog](https://github.com/website-templates/jekyll-inclusion)
 * [Miniature wookie](http://orlovmax.com/lab/tools/miniature-wookie)
 * [Simple contact form](http://orlovmax.com/lab/simple-contact-form)
 * [Browser update screen](http://orlovmax.com/lab/browser-update-screen)
@@ -86,6 +86,8 @@ I don't like to keep in mind all those mixin names, so I've created this snippet
 * Shortkeys list for snippets. Make snippet completion or something like that.
 * Less version
 * No-preprocessor version
+
+Please note, that custom fonts, like Open Sans and Open Sans Condensed linked to the framework using @import directive. For better performance please use `<link>` tag in your markup `link(href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800|Open+Sans+Condensed:300&subset=latin,cyrillic', rel='stylesheet', type='text/css')` or local copies of these fonts
 
 ## Changelog
 * v2.2 (January 06, 2015)
