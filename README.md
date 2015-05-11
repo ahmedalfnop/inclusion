@@ -1,4 +1,4 @@
-# Inclusion. Sass / Less Framework
+# Inclusion. Sass / Scss / Stylus Framework
 
 ##Contents
 * [About](#about)
@@ -90,6 +90,8 @@ I don't like to keep in mind all those mixin names, so I've created this snippet
 Please note, that custom fonts, like Open Sans and Open Sans Condensed linked to the framework using @import directive. For better performance please use `<link>` tag in your markup `link(href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,300,400,600,700,800|Open+Sans+Condensed:300&subset=latin,cyrillic', rel='stylesheet', type='text/css')` or local copies of these fonts
 
 ## Changelog
+* v2.3 (June 19, 2015)
+  - Stylus version
 * v2.2 (January 06, 2015)
   - Sass version
 * v2.1 (December 22, 2014)

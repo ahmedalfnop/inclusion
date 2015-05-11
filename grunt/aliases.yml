@@ -1,0 +1,34 @@
+default:
+    tasks:
+        - 'newer:concat'
+        - 'newer:sass'
+        - 'newer:less'
+        - 'newer:stylus'
+        - 'newer:imagemin'
+        - 'newer:copy'
+        - 'watch'
+
+
+bower-dev:
+    tasks:
+        - 'bower_concat'
+        - 'clean:bower'
+
+
+regen:
+    tasks:
+        - 'concat'
+        - 'sass'
+        - 'less'
+        - 'stylus'
+        - 'copy'
+
+
+build:
+    tasks:
+        - 'cmq'
+        - 'autoprefixer'
+        - 'uglify'
+        - 'csso'
+        - 'htmlmin'
+        - 'clean:debug'

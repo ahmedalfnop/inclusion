@@ -1,0 +1,482 @@
+// ==============================
+// $Inclusion styles
+// ==============================
+@import components/inclusion_sass/extend/_inclusion
+@import components/_font-redacted.sass
+
+// Redacted font - for mockup text
+%mockup-text
+	font-family: 'redacted_scriptregular'
+	color: #bdc3c7 // silver color from flatui palette
+
+@include selection($color: dark)
+body
+	@include body($align: left, $color: light)
+
+.container 
+	@include container
+
+// ==============================
+// $Main header
+// ============================== 
+.main__header
+	@include header()
+
+.hgroup
+	@include hgroup($color: light)
+
+.navbar
+	@include nav($color: light)
+
+// ==============================
+// $Home section
+// ============================== 				
+.home
+	@include section($bg-color: none, $shadow: false, $align: center, $bg-image:"../img/home.jpg", $overlay: dark, $jumbo: true)
+
+	&__title
+		@include typo($align: inherit, $color: light, $font: inherit, $text-shadow: #555)
+	
+	&__descr
+		@include typo($align: inherit, $color: light, $font: condensed, $text-shadow: #555)
+	
+	&__gonext-btn
+		@include icon-button($icon: down, $shape: rect, $color: light)
+		position: absolute
+		bottom: 30px
+		left: 50%
+		margin-left: -25px
+			
+
+
+// ==============================
+// $Demo section
+// ==============================    
+.demo
+	@include section($bg-color: light)
+			
+	& .is-demo
+		cursor: help
+					
+	
+	&__chapter-title
+		@include typo($align: center, $font: serif)
+	
+	&__intro-note, &__note
+		@include blockquote()
+		
+	&__intro, &__headings-text, &__images, &__blockquotes, &__lists, &__code, &__blocks, &__tables, &__buttons, &__grid
+		@include chapter($divider: bottom)
+	
+	&__title
+		@include typo($align: center)
+	
+	&__intro-text		
+		@include typo($align: justify, $color: inherit, $font: inherit, $text-shadow: none)
+	
+	&__descr		
+		@include typo($align: center, $font: condensed)
+	
+
+
+	// Headings and text demo
+
+	&__subtitle-left
+		@include typo($align: left, $font: sans)
+	
+	&__subtitle-serif-left
+		@include typo($align: left, $font: serif)
+	
+	&__subtitle-cond-left
+		@include typo($align: left, $font: condensed)
+	
+	&__subtitle-right
+		@include typo($align: right, $font: sans)
+	
+	&__subtitle-serif-right
+		@include typo($align: right, $font: serif)
+	
+	&__subtitle-cond-right
+		@include typo($align: right, $font: condensed)
+	
+	&__subtitle-center
+		@include typo($align: center, $font: sans)
+	
+	&__subtitle-serif-center
+		@include typo($align: center, $font: serif)
+	
+	&__subtitle-cond-center
+		@include typo($align: center, $font: condensed)
+	
+	
+	&__text-example
+		@include typo()
+	
+	// Mockup headings and text
+	&__subtitle-plain-left
+		@include typo($align: left)
+		@extend %mockup-text
+	
+	&__subtitle-plain-right
+		@include typo($align: right)
+		@extend %mockup-text
+	
+	&__subtitle-plain-center
+		@include typo($align: center)
+		@extend %mockup-text
+	
+	&__plain-text
+		@include typo($align: justify)
+		@extend %mockup-text	
+	
+
+
+	// Images demo
+	
+	&__image-left
+		@include figure($position: left)
+			
+	&__image-left-extra
+		@include figure($position: left, $extra: true)
+	
+	&__image-right
+		@include figure($position: right)
+		
+	&__image-right-extra
+		@include figure($position: right, $extra: true)
+	
+	&__image-center
+		@include figure($position: center)
+	
+	&__image-center-extra
+		@include figure($position: center, $extra: true)
+	
+
+	// Blockquotes demo
+	
+	&__bq-center
+		@include blockquote($align: center)
+	
+		&__bq-center-extra
+			@include blockquote($align: center, $position: normal, $extra: true)
+		
+	&__bq-left
+		@include blockquote($align: left)
+			
+	&__bq-left-extra
+		@include blockquote($align: left, $position: normal, $extra: true)
+	
+	&__bq-float-left
+		@include blockquote($align: left, $position: left)
+	
+	&__bq-float-left-extra
+		@include blockquote($align: left, $position: left, $extra: true)
+	
+	&__bq-right
+		@include blockquote($align: right)
+	
+	&__bq-right-extra
+		@include blockquote($align: right, $position: normal, $extra: true)
+	
+	&__bq-float-right
+		@include blockquote($align: right, $position: right)
+	
+	&__bq-float-right-extra
+		@include blockquote($align: right, $position: right, $extra: true)
+	
+	
+	// Lists demo
+	
+	&__ul-left
+		@include list($type: ul, $position: left)
+	
+	&__ul-left-extra
+		@include list($type: ul, $position: left, $extra: true)
+	
+	&__titled-list
+		@include list($type: ul) 
+	
+	&__ul-right
+		@include list($type: ul, $position: right)
+	
+	&__ul-right-extra
+		@include list($type: ul, $position: right, $extra: true)
+	
+	&__ol-left
+		@include list($type: ol, $position: left)
+	
+	&__ol-left-extra
+		@include list($type: ol, $position: left, $extra: true)
+	
+	&__ol-right
+		@include list($type: ol, $position: right)
+	
+	&__ol-right-extra
+		@include list($type: ol, $position: right, $extra: true)
+	
+
+	// Code demo
+	
+	&__code-center
+		@include figure($type: code, $position: center)
+	
+	&__code-center-extra
+		@include figure($type: code, $position: center, $extra: true)
+	
+	&__code-left
+		@include figure($type: code, $position: left)
+	
+	&__code-left-extra
+		@include figure($type: code, $position: left, $extra: true)
+	
+	&__code-right
+		@include figure($type: code, $position: right)
+		
+	&__code-right-extra
+		@include figure($type: code, $position: right, $extra: true)
+	
+
+	// Table demo
+	
+	&__table-center
+		@include table($align: left, $position: center)
+	
+	&__table-left
+		@include table($align: left, $position: left)
+	
+	&__table-right
+		@include table($align: left, $position: right)
+	
+	&__table-center-extra
+		@include table($align: left, $position: center, $extra: true)
+	
+	&__table-left-extra
+		@include table($align: left, $position: left, $extra: true)
+	
+	&__table-right-extra
+		@include table($align: left, $position: right, $extra: true)
+	
+
+	// Blocks demo
+
+	&__block-center
+		@include block($position: center)			
+	
+	&__block-center-extra
+		@include block($position: center, $extra: true)			
+	
+	&__block-left
+		@include block($position: left)			
+	
+	&__block-left-extra
+		@include block($position: left, $extra: true)			
+	
+	&__block-right
+		@include block($position: right)		
+	
+	&__block-right-extra
+		@include block($position: right, $extra: true)		
+	
+
+	&__chapter-titled-list
+		@include list()
+		
+
+	// Spoilers demo
+	&__spoiler-left
+		@include block($position: left, $extra: false, $spoiler: true)
+	
+	&__spoiler-left-extra
+		@include block($position: left, $extra: true, $spoiler: true)
+	
+	&__spoiler-right
+		@include block($position: right, $extra: false, $spoiler: true)
+	
+	&__spoiler-right-extra
+		@include block($position: right, $extra: true, $spoiler: true)
+	
+	&__spoiler-center
+		@include block($position: center, $extra: false, $spoiler: true)
+	
+
+	// Buttons demo
+	&__button-small
+		@include button($size: small)
+		
+	&__button-regular
+		@include button($size: regular)
+	
+	&__button-large
+		@include button($size: large)
+	
+	&__button-disabled
+		@include button($state: disabled)
+	
+	&__button-left
+		@include button($position: left)
+	
+	&__button-right
+		@include button($position: right)
+	
+
+
+
+.grid
+	@include gs()
+	margin-bottom: 20px
+	
+	// Common cdemo column styles
+	& .col
+		background-color: #e2e2e2
+		text-align: center
+		line-height: 60px
+	
+
+	// Fluid responsive grid styles
+	&__row
+		@include gs()
+	
+
+	&__resp-1
+		@include gs-column(1,12,1%,10px,80px,2%, 10px)
+		@media screen and (max-width: 800px)
+			@include gs-column(2,12,1%,10px,80px,2%, 10px)
+		
+	
+	&__resp-2
+		@include gs-column(2,12,1%,10px,80px,2%, 10px)
+		@media screen and (max-width: 800px)
+			@include gs-column(4,12,1%,10px,80px,2%, 10px)
+		
+	
+	&__resp-3
+		@include gs-column(3,12,1%,10px,80px,2%, 10px)
+		@media screen and (max-width: 800px)
+			@include gs-column(6,12,1%,10px,80px,2%, 10px)
+		
+	
+	&__resp-4
+		@include gs-column(4,12,1%,10px,80px,2%, 10px)
+		@media screen and (max-width: 800px)
+			@include gs-column(12,12,1%,10px,80px,2%, 10px)
+		
+	
+	&__resp-6
+		@include gs-column(6,12,1%,10px,80px,2%, 10px)
+		@media screen and (max-width: 800px)
+			@include gs-column(12,12,1%,10px,80px,2%, 10px)
+		
+	
+	&__resp-12
+		@include gs-column(12,12,1%,10px,80px,2%, 10px)
+	
+
+	// Fluid push/pull grid styles
+	&__fluid-1
+		@include gs-column(1,12,1%,10px,80px,2%, 10px)
+	
+	&__fluid-2
+		@include gs-column(2,12,1%,10px,80px,2%, 10px)
+	
+	&__fluid-3
+		@include gs-column(3,12,1%,10px,80px,2%, 10px)
+	
+	&__fluid-4
+		@include gs-column(4,12,1%,10px,80px,2%, 10px)
+	
+	&__fluid-6
+		@include gs-column(6,12,1%,10px,80px,2%, 10px)
+	
+	&__fluid-12
+		@include gs-column(12,12,1%,10px,80px,2%, 10px)
+	
+	& .push-1
+		@include gs-push(1,12,1%)				
+	
+	& .push-2
+		@include gs-push(2,12,1%)				
+	
+	& .push-3
+		@include gs-push(3,12,1%)				
+	
+	& .push-4
+		@include gs-push(4,12,1%)
+	
+	& .push-6
+		@include gs-push(6,12,1%)				
+	
+	& .pull-1
+		@include gs-pull(1,12,1%)				
+	
+	& .pull-2
+		@include gs-pull(2,12,1%)				
+	
+	& .pull-3
+		@include gs-pull(3,12,1%)				
+	
+	& .pull-4
+		@include gs-pull(4,12,1%)
+	
+	& .pull-6
+		@include gs-pull(6,12,1%)				
+	
+
+	
+	// Nested responsive grid styles
+	&__nest-4
+		@include gs-column(2,6,0,0,300px)
+		@media screen and (max-width: 800px)
+			@include gs-column(4,6,0,0,300px)
+		
+	
+	&__nest-2
+		@include gs-column(1,6,0,0,300px)
+		@media screen and (max-width: 800px)
+			@include gs-column(2,6,0,0,300px)
+		
+	
+	&__nest-col-12
+		@include gs-column(2,2,10px,10px,50%)
+	
+	&__nest-col-6
+		@include gs-column(1,2,10px,10px,50%)
+	
+	&__big-col-4
+		@include gs-column(2,6,10px,10px,300px,2%, 10px)
+		@media screen and (max-width: 800px)
+			@include gs-column(2,6,10px,10px,300px,2%, 10px)
+		
+	
+	&__big-col-2
+		@include gs-column(1,6,10px,10px,300px,2%, 10px)
+		@media screen and (max-width: 800px)
+			@include gs-column(4,6,10px,10px,300px,2%, 10px)
+		
+	
+	&__col-4
+		@include gs-column(2,6,10px,10px,150px,2%, 10px)
+		@media screen and (max-width: 800px)
+			@include gs-column(4,6,10px,10px,150px,2%, 10px)
+		
+	
+	&__col-2
+		@include gs-column(1,6,10px,10px,150px,2%, 10px)
+		@media screen and (max-width: 800px)
+			@include gs-column(2,6,10px,10px,150px,2%, 10px)
+		
+	
+
+
+
+// ==============================
+// $Main footer
+// ============================== 		
+.main-footer
+	@include section($bg-color: light, $shadow: false, $align: center)
+	
+	&__gotop-btn
+		@include icon-button($icon: up, $shape: rect, $color: dark)
+		margin: 20px auto
+	 
+	&__info
+		@include typo()

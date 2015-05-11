@@ -93,6 +93,8 @@ footer,
 header,
 nav,
 section {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
 	margin: 0;
@@ -159,8 +161,6 @@ input[type=submit] {
    Fluid grid system for scss
    ========================================================= */
 
-/* Predefined class names for generator */
-
 /*Internal mixins */
 
 /* Calc() mixin */
@@ -179,8 +179,6 @@ input[type=submit] {
 /* Offset mixin allows to push column left or right on some distance. 
  * Expected settings: distance-column count to move on, total column count in row, horizontal gutter like in other columns. 
  * By default	it sets to 1 column of 12 total columns without gutters. Gutter units - percents*/
-
-/* Generate classnames for grid */
 
 /* ==============================
    $Prism
@@ -204,6 +202,7 @@ pre {
 	word-spacing: normal;
 	word-break: normal;
 	-moz-tab-size: 4;
+	-o-tab-size: 4;
 	tab-size: 4;
 	-webkit-hyphens: none;
 	-moz-hyphens: none;
@@ -219,6 +218,7 @@ pre {
 	-ms-overflow-x: auto;
 	overflow-x: auto;
 	border: 1px solid;
+	-webkit-border-radius: 3px;
 	border-radius: 3px;
 }
 
@@ -506,6 +506,7 @@ a:focus {
 .demo__button-right {
 	display: block;
 	background-color: transparent;
+	-webkit-border-radius: 0;
 	border-radius: 0;
 	border: 1px solid;
 	font-family: inherit;
@@ -563,6 +564,7 @@ a:focus {
 .demo__button-right {
 	border-color: #777777;
 	color: #2b2b2b;
+	-webkit-transition: all 0.2s ease 0s;
 	transition: all 0.2s ease 0s;
 }
 
@@ -630,6 +632,7 @@ a:focus {
 	overflow: hidden;
 	font-size: 0;
 	text-decoration: none;
+	-webkit-transition: all 0.5s ease 0s;
 	transition: all 0.5s ease 0s;
 }
 
@@ -690,6 +693,7 @@ a:focus {
 	-webkit-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
 	transform: rotate(-45deg);
+	-webkit-transition: all 0.5s ease 0s;
 	transition: all 0.5s ease 0s;
 }
 
@@ -721,6 +725,7 @@ a:focus {
 	position: relative;
 	width: 100%;
 	height: 50px;
+	-webkit-box-shadow: inset 0 45px 35px -35px #2b2b2b;
 	box-shadow: inset 0 45px 35px -35px #2b2b2b;
 }
 
@@ -731,6 +736,7 @@ a:focus {
 	color: #efefef;
 	text-decoration: none;
 	border-bottom: 1px dotted #efefef;
+	-webkit-transition: all 0.3s ease 0s;
 	transition: all 0.3s ease 0s;
 }
 
@@ -766,6 +772,7 @@ a:focus {
 	color: #efefef;
 	font-size: 32px;
 	cursor: pointer;
+	-webkit-transition: all 0.3s ease 0s;
 	transition: all 0.3s ease 0s;
 }
 
@@ -824,6 +831,7 @@ a:focus {
 	font-size: 30px;
 	color: #2b2b2b;
 	text-decoration: none;
+	-webkit-transition: all 0.3s ease 0s;
 	transition: all 0.3s ease 0s;
 }
 
@@ -981,9 +989,12 @@ a:focus {
 
 .demo__block-center-extra {
 	width: 100%;
+	width: -webkit-calc(100% + 240px);
 	width: calc(100% + 240px);
 	max-width: 100%;
+	max-width: -webkit-calc(100% + 240px);
 	max-width: calc(100% + 240px);
+	margin-left: -webkit-calc(-120px);
 	margin-left: calc(-120px);
 }
 
@@ -1258,9 +1269,12 @@ blockquote cite:before {
 
 .demo__bq-center-extra {
 	width: 100%;
+	width: -webkit-calc(100% + 240px);
 	width: calc(100% + 240px);
 	max-width: 100%;
+	max-width: -webkit-calc(100% + 240px);
 	max-width: calc(100% + 240px);
+	margin-left: -webkit-calc(-120px);
 	margin-left: calc(-120px);
 }
 
@@ -1569,9 +1583,12 @@ blockquote cite:before {
 .demo__image-center-extra,
 .demo__code-center-extra {
 	width: 100%;
+	width: -webkit-calc(100% + 240px);
 	width: calc(100% + 240px);
 	max-width: 100%;
+	max-width: -webkit-calc(100% + 240px);
 	max-width: calc(100% + 240px);
+	margin-left: -webkit-calc(-120px);
 	margin-left: calc(-120px);
 }
 
@@ -1754,9 +1771,12 @@ blockquote cite:before {
 
 .demo__table-center-extra {
 	width: 100%;
+	width: -webkit-calc(100% + 240px);
 	width: calc(100% + 240px);
 	max-width: 100%;
+	max-width: -webkit-calc(100% + 240px);
 	max-width: calc(100% + 240px);
+	margin-left: -webkit-calc(-120px);
 	margin-left: calc(-120px);
 }
 
@@ -1843,6 +1863,7 @@ blockquote cite:before {
 	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAAZSURBVHjaYmCAAGM0GjfHGEMGAAAA//8DACm0ATMe8beGAAAAAElFTkSuQmCC") repeat, url("../img/home.jpg") center 0 no-repeat;
 	background-attachment: fixed, fixed;
 	background-color: #f39c12;
+	-webkit-background-size: auto, cover;
 	background-size: auto, cover;
 }
 
@@ -1918,10 +1939,13 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -1934,10 +1958,13 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -1950,10 +1977,13 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -1966,10 +1996,13 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -1982,10 +2015,13 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -1998,10 +2034,13 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2014,10 +2053,13 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2030,10 +2072,13 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2046,10 +2091,13 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2062,10 +2110,13 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2078,10 +2129,13 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2094,10 +2148,13 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2180,18 +2237,24 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	width: 98%;
+	width: -webkit-calc(100% - 10px);
 	width: calc(100% - 10px);
 	margin-left: 1%;
 	margin-right: 1%;
+	margin-left: -webkit-calc(5px);
 	margin-left: calc(5px);
+	margin-right: -webkit-calc(5px);
 	margin-right: calc(5px); /* Column height math */ /* Check gutter height and it fallback for `auto` values, if false - return no math variant */ /* Check gutter value, if its units not equal to grid units - return calc math with fallback<
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 48%;
+	height: -webkit-calc(50% - 10px);
 	height: calc(50% - 10px);
 	margin-top: 1%;
 	margin-bottom: 1%;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2200,18 +2263,24 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	width: 48%;
+	width: -webkit-calc(50% - 10px);
 	width: calc(50% - 10px);
 	margin-left: 1%;
 	margin-right: 1%;
+	margin-left: -webkit-calc(5px);
 	margin-left: calc(5px);
+	margin-right: -webkit-calc(5px);
 	margin-right: calc(5px); /* Column height math */ /* Check gutter height and it fallback for `auto` values, if false - return no math variant */ /* Check gutter value, if its units not equal to grid units - return calc math with fallback<
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 48%;
+	height: -webkit-calc(50% - 10px);
 	height: calc(50% - 10px);
 	margin-top: 1%;
 	margin-bottom: 1%;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2220,18 +2289,24 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	width: 31.33333%;
+	width: -webkit-calc(33.33333% - 10px);
 	width: calc(33.33333% - 10px);
 	margin-left: 1%;
 	margin-right: 1%;
+	margin-left: -webkit-calc(5px);
 	margin-left: calc(5px);
+	margin-right: -webkit-calc(5px);
 	margin-right: calc(5px); /* Column height math */ /* Check gutter height and it fallback for `auto` values, if false - return no math variant */ /* Check gutter value, if its units not equal to grid units - return calc math with fallback<
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 290px;
+	height: -webkit-calc(300px - 10px);
 	height: calc(300px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2240,18 +2315,24 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	width: 14.66667%;
+	width: -webkit-calc(16.66667% - 10px);
 	width: calc(16.66667% - 10px);
 	margin-left: 1%;
 	margin-right: 1%;
+	margin-left: -webkit-calc(5px);
 	margin-left: calc(5px);
+	margin-right: -webkit-calc(5px);
 	margin-right: calc(5px); /* Column height math */ /* Check gutter height and it fallback for `auto` values, if false - return no math variant */ /* Check gutter value, if its units not equal to grid units - return calc math with fallback<
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 290px;
+	height: -webkit-calc(300px - 10px);
 	height: calc(300px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2260,18 +2341,24 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	width: 31.33333%;
+	width: -webkit-calc(33.33333% - 10px);
 	width: calc(33.33333% - 10px);
 	margin-left: 1%;
 	margin-right: 1%;
+	margin-left: -webkit-calc(5px);
 	margin-left: calc(5px);
+	margin-right: -webkit-calc(5px);
 	margin-right: calc(5px); /* Column height math */ /* Check gutter height and it fallback for `auto` values, if false - return no math variant */ /* Check gutter value, if its units not equal to grid units - return calc math with fallback<
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 140px;
+	height: -webkit-calc(150px - 10px);
 	height: calc(150px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2280,18 +2367,24 @@ blockquote cite:before {
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	width: 14.66667%;
+	width: -webkit-calc(16.66667% - 10px);
 	width: calc(16.66667% - 10px);
 	margin-left: 1%;
 	margin-right: 1%;
+	margin-left: -webkit-calc(5px);
 	margin-left: calc(5px);
+	margin-right: -webkit-calc(5px);
 	margin-right: calc(5px); /* Column height math */ /* Check gutter height and it fallback for `auto` values, if false - return no math variant */ /* Check gutter value, if its units not equal to grid units - return calc math with fallback<
    * else - common math */ /* Check gutter fallback value for valid  units, 
    	 * if true - continue math with calc() property and fallback*/
 	height: 140px;
+	height: -webkit-calc(150px - 10px);
 	height: calc(150px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2342,9 +2435,12 @@ p {
 
 .demo__block-center-extra {
 	width: 100%;
+	width: -webkit-calc(100% + 120px);
 	width: calc(100% + 120px);
 	max-width: 100%;
+	max-width: -webkit-calc(100% + 120px);
 	max-width: calc(100% + 120px);
+	margin-left: -webkit-calc(-60px);
 	margin-left: calc(-60px);
 }
 
@@ -2364,9 +2460,12 @@ blockquote cite {
 
 .demo__bq-center-extra {
 	width: 100%;
+	width: -webkit-calc(100% + 120px);
 	width: calc(100% + 120px);
 	max-width: 100%;
+	max-width: -webkit-calc(100% + 120px);
 	max-width: calc(100% + 120px);
+	margin-left: -webkit-calc(-60px);
 	margin-left: calc(-60px);
 }
 
@@ -2421,9 +2520,12 @@ blockquote cite {
 .demo__image-center-extra,
 .demo__code-center-extra {
 	width: 100%;
+	width: -webkit-calc(100% + 120px);
 	width: calc(100% + 120px);
 	max-width: 100%;
+	max-width: -webkit-calc(100% + 120px);
 	max-width: calc(100% + 120px);
+	margin-left: -webkit-calc(-60px);
 	margin-left: calc(-60px);
 }
 
@@ -2437,9 +2539,12 @@ blockquote cite {
 
 .demo__table-center-extra {
 	width: 100%;
+	width: -webkit-calc(100% + 120px);
 	width: calc(100% + 120px);
 	max-width: 100%;
+	max-width: -webkit-calc(100% + 120px);
 	max-width: calc(100% + 120px);
+	margin-left: -webkit-calc(-60px);
 	margin-left: calc(-60px);
 }
 
@@ -2670,10 +2775,13 @@ blockquote cite {
      * else - common math */ /* Check gutter fallback value for valid  units, 
      	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2686,10 +2794,13 @@ blockquote cite {
      * else - common math */ /* Check gutter fallback value for valid  units, 
      	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2702,10 +2813,13 @@ blockquote cite {
      * else - common math */ /* Check gutter fallback value for valid  units, 
      	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2718,10 +2832,13 @@ blockquote cite {
      * else - common math */ /* Check gutter fallback value for valid  units, 
      	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2734,10 +2851,13 @@ blockquote cite {
      * else - common math */ /* Check gutter fallback value for valid  units, 
      	 * if true - continue math with calc() property and fallback*/
 	height: 70px;
+	height: -webkit-calc(80px - 10px);
 	height: calc(80px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2770,18 +2890,24 @@ blockquote cite {
      * else - common math */ /* Check gutter fallback value for valid  units, 
      	 * if true - continue math with calc() property and fallback*/
 	width: 31.33333%;
+	width: -webkit-calc(33.33333% - 10px);
 	width: calc(33.33333% - 10px);
 	margin-left: 1%;
 	margin-right: 1%;
+	margin-left: -webkit-calc(5px);
 	margin-left: calc(5px);
+	margin-right: -webkit-calc(5px);
 	margin-right: calc(5px); /* Column height math */ /* Check gutter height and it fallback for `auto` values, if false - return no math variant */ /* Check gutter value, if its units not equal to grid units - return calc math with fallback<
      * else - common math */ /* Check gutter fallback value for valid  units, 
      	 * if true - continue math with calc() property and fallback*/
 	height: 290px;
+	height: -webkit-calc(300px - 10px);
 	height: calc(300px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2790,18 +2916,24 @@ blockquote cite {
      * else - common math */ /* Check gutter fallback value for valid  units, 
      	 * if true - continue math with calc() property and fallback*/
 	width: 64.66667%;
+	width: -webkit-calc(66.66667% - 10px);
 	width: calc(66.66667% - 10px);
 	margin-left: 1%;
 	margin-right: 1%;
+	margin-left: -webkit-calc(5px);
 	margin-left: calc(5px);
+	margin-right: -webkit-calc(5px);
 	margin-right: calc(5px); /* Column height math */ /* Check gutter height and it fallback for `auto` values, if false - return no math variant */ /* Check gutter value, if its units not equal to grid units - return calc math with fallback<
      * else - common math */ /* Check gutter fallback value for valid  units, 
      	 * if true - continue math with calc() property and fallback*/
 	height: 290px;
+	height: -webkit-calc(300px - 10px);
 	height: calc(300px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2810,18 +2942,24 @@ blockquote cite {
      * else - common math */ /* Check gutter fallback value for valid  units, 
      	 * if true - continue math with calc() property and fallback*/
 	width: 64.66667%;
+	width: -webkit-calc(66.66667% - 10px);
 	width: calc(66.66667% - 10px);
 	margin-left: 1%;
 	margin-right: 1%;
+	margin-left: -webkit-calc(5px);
 	margin-left: calc(5px);
+	margin-right: -webkit-calc(5px);
 	margin-right: calc(5px); /* Column height math */ /* Check gutter height and it fallback for `auto` values, if false - return no math variant */ /* Check gutter value, if its units not equal to grid units - return calc math with fallback<
      * else - common math */ /* Check gutter fallback value for valid  units, 
      	 * if true - continue math with calc() property and fallback*/
 	height: 140px;
+	height: -webkit-calc(150px - 10px);
 	height: calc(150px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 
@@ -2830,18 +2968,24 @@ blockquote cite {
      * else - common math */ /* Check gutter fallback value for valid  units, 
      	 * if true - continue math with calc() property and fallback*/
 	width: 31.33333%;
+	width: -webkit-calc(33.33333% - 10px);
 	width: calc(33.33333% - 10px);
 	margin-left: 1%;
 	margin-right: 1%;
+	margin-left: -webkit-calc(5px);
 	margin-left: calc(5px);
+	margin-right: -webkit-calc(5px);
 	margin-right: calc(5px); /* Column height math */ /* Check gutter height and it fallback for `auto` values, if false - return no math variant */ /* Check gutter value, if its units not equal to grid units - return calc math with fallback<
      * else - common math */ /* Check gutter fallback value for valid  units, 
      	 * if true - continue math with calc() property and fallback*/
 	height: 140px;
+	height: -webkit-calc(150px - 10px);
 	height: calc(150px - 10px);
 	margin-top: 5px;
 	margin-bottom: 5px;
+	margin-top: -webkit-calc(5px);
 	margin-top: calc(5px);
+	margin-bottom: -webkit-calc(5px);
 	margin-bottom: calc(5px);
 }
 

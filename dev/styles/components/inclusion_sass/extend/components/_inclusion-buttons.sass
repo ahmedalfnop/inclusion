@@ -118,12 +118,15 @@
 		color: #{nth($color, 2)}
 		&:after
 			color: #{nth($color, 2)}
-
+			
+@function unicode($str)
+	@return unquote("\"") + $str + unquote("\"")
 // Icon-button icon
 @each $icon in $icons
 	%icon-button-#{nth($icon, 1)}
+		text-transform: uppercase
 		&:after
-			content: #{nth($icon, 2)}
+			content: unicode(nth($icon, 2))
 
 // Icon-button shape
 %icon-button-rect

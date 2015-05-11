@@ -63,6 +63,6 @@
 // Border mixins start
 =border($position, $color)
 	@if $color == "light"
-		border-#{nth($position, 1)}: 3px solid $color-light_darken
+		border-#{nth($position, 1)}: 3px solid $color-light_darker
 	@else if $color == "dark"
-		border-#{nth($position, 1)}: 3px solid $color-dark_lighten
+		border-#{nth($position, 1)}: 3px solid $color-dark_lighter

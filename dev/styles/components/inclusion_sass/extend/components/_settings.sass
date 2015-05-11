@@ -1,9 +1,9 @@
 // Color variables
 $color-dark: #2b2b2b
-$color-dark_lighten: lighten($color-dark, 30%)
+$color-dark_lighter: lighten($color-dark, 30%)
 
 $color-light: #efefef
-$color-light_darken: darken($color-light, 30%)
+$color-light_darker: darken($color-light, 30%)
 
 $accent-color: #f39c12
 
@@ -23,10 +23,10 @@ $font-sans: 'Open Sans', Tahoma, Verdana, Arial, sans-serif
 $font-condensed: 'Open Sans Condensed', sans-serif
 
 // maps
-$colors: light $color-light darken $color-light_darken dark $color-dark lighten $color-dark_lighten $overlay-bg-light, dark $color-dark lighten $color-dark_lighten light $color-light darken $color-light_darken $overlay-bg-dark, darken $color-light_darken light $color-light lighten $color-dark_lighten dark $color-dark $overlay-bg-dark, lighten $color-dark_lighten dark $color-dark darken $color-light_darken light $color-light $overlay-light
+$colors: light $color-light darker $color-light_darker dark $color-dark lighter $color-dark_lighter $overlay-bg-light, dark $color-dark lighter $color-dark_lighter light $color-light darker $color-light_darker $overlay-bg-dark, darker $color-light_darker light $color-light lighter $color-dark_lighter dark $color-dark $overlay-bg-dark, lighter $color-dark_lighter dark $color-dark darker $color-light_darker light $color-light $overlay-light
 
 $fonts: (sans: $font-sans, serif: $font-serif, condensed: $font-condensed)
 
 $align: (left: right, right: left, center: normal, justify: normal, normal: normal)
 
-$icons:	(up "\e800", down "\e801", twitter "\e806", vk "\e807", gplus "\e808", skype "\e80a", bitbucket "\e80b", linkedin "\e80c", mail "\e80d", git "\e80e", pencil "\e810", fb "\e811")
+$icons:	up "\e800", down "\e801", twitter "\e806", vk "\e807", gplus "\e808", skype "\e80a", bitbucket "\e80b", linkedin "\e80c", mail "\e80d", git "\e80e", pencil "\e810", fb "\e811"

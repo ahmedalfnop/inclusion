@@ -54,7 +54,9 @@
 		float: right
 		margin: 5px 0 5px 3%
 
-// Iconic button
+// Iconic button			
+@function unicode($str)
+	@return unquote("\"") + $str + unquote("\"")
 
 =icon-button($icon: down, $shape: rect, $color: dark)
 	display: block
@@ -81,7 +83,7 @@
 	@each $item in $icons
 		@if $icon == nth($item, 1)
 			&:after
-				content: #{nth($item, 2)}
+				content: unicode(nth($item, 2))
 	@each $item in $colors
 		@if $color == nth($item, 1)
 			border: 2px solid #{nth($item, 2)}
