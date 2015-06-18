@@ -56,8 +56,7 @@ body
 	@include section($bg-color: light)
 			
 	& .is-demo
-		cursor: help
-					
+		cursor: help					
 	
 	&__chapter-title
 		@include typo($align: center, $font: serif)
@@ -80,7 +79,6 @@ body
 
 
 	// Headings and text demo
-
 	&__subtitle-left
 		@include typo($align: left, $font: sans)
 	
@@ -106,8 +104,7 @@ body
 		@include typo($align: center, $font: serif)
 	
 	&__subtitle-cond-center
-		@include typo($align: center, $font: condensed)
-	
+		@include typo($align: center, $font: condensed)	
 	
 	&__text-example
 		@include typo()
@@ -131,8 +128,7 @@ body
 	
 
 
-	// Images demo
-	
+	// Images demo	
 	&__image-left
 		@include figure($position: left)
 			
@@ -152,13 +148,12 @@ body
 		@include figure($position: center, $extra: true)
 	
 
-	// Blockquotes demo
-	
+	// Blockquotes demo	
 	&__bq-center
 		@include blockquote($align: center)
 	
-		&__bq-center-extra
-			@include blockquote($align: center, $position: normal, $extra: true)
+	&__bq-center-extra
+		@include blockquote($align: center, $position: normal, $extra: true)
 		
 	&__bq-left
 		@include blockquote($align: left)
@@ -185,8 +180,7 @@ body
 		@include blockquote($align: right, $position: right, $extra: true)
 	
 	
-	// Lists demo
-	
+	// Lists demo	
 	&__ul-left
 		@include list($type: ul, $position: left)
 	
@@ -215,8 +209,7 @@ body
 		@include list($type: ol, $position: right, $extra: true)
 	
 
-	// Code demo
-	
+	// Code demo	
 	&__code-center
 		@include figure($type: code, $position: center)
 	
@@ -236,8 +229,7 @@ body
 		@include figure($type: code, $position: right, $extra: true)
 	
 
-	// Table demo
-	
+	// Table demo	
 	&__table-center
 		@include table($align: left, $position: center)
 	
@@ -258,7 +250,6 @@ body
 	
 
 	// Blocks demo
-
 	&__block-center
 		@include block($position: center)			
 	
@@ -275,8 +266,7 @@ body
 		@include block($position: right)		
 	
 	&__block-right-extra
-		@include block($position: right, $extra: true)		
-	
+		@include block($position: right, $extra: true)
 
 	&__chapter-titled-list
 		@include list()
@@ -334,38 +324,32 @@ body
 
 	// Fluid responsive grid styles
 	&__row
-		@include gs()
-	
+		@include gs()	
 
 	&__resp-1
 		@include gs-column(1,12,1%,10px,80px,2%, 10px)
 		@media screen and (max-width: 800px)
-			@include gs-column(2,12,1%,10px,80px,2%, 10px)
-		
+			@include gs-column(2,12,1%,10px,80px,2%, 10px)		
 	
 	&__resp-2
 		@include gs-column(2,12,1%,10px,80px,2%, 10px)
 		@media screen and (max-width: 800px)
-			@include gs-column(4,12,1%,10px,80px,2%, 10px)
-		
+			@include gs-column(4,12,1%,10px,80px,2%, 10px)		
 	
 	&__resp-3
 		@include gs-column(3,12,1%,10px,80px,2%, 10px)
 		@media screen and (max-width: 800px)
-			@include gs-column(6,12,1%,10px,80px,2%, 10px)
-		
+			@include gs-column(6,12,1%,10px,80px,2%, 10px)		
 	
 	&__resp-4
 		@include gs-column(4,12,1%,10px,80px,2%, 10px)
 		@media screen and (max-width: 800px)
-			@include gs-column(12,12,1%,10px,80px,2%, 10px)
-		
+			@include gs-column(12,12,1%,10px,80px,2%, 10px)		
 	
 	&__resp-6
 		@include gs-column(6,12,1%,10px,80px,2%, 10px)
 		@media screen and (max-width: 800px)
-			@include gs-column(12,12,1%,10px,80px,2%, 10px)
-		
+			@include gs-column(12,12,1%,10px,80px,2%, 10px)		
 	
 	&__resp-12
 		@include gs-column(12,12,1%,10px,80px,2%, 10px)
@@ -426,14 +410,12 @@ body
 	&__nest-4
 		@include gs-column(2,6,0,0,300px)
 		@media screen and (max-width: 800px)
-			@include gs-column(4,6,0,0,300px)
-		
+			@include gs-column(4,6,0,0,300px)		
 	
 	&__nest-2
 		@include gs-column(1,6,0,0,300px)
 		@media screen and (max-width: 800px)
-			@include gs-column(2,6,0,0,300px)
-		
+			@include gs-column(2,6,0,0,300px)		
 	
 	&__nest-col-12
 		@include gs-column(2,2,10px,10px,50%)
@@ -444,27 +426,22 @@ body
 	&__big-col-4
 		@include gs-column(2,6,10px,10px,300px,2%, 10px)
 		@media screen and (max-width: 800px)
-			@include gs-column(2,6,10px,10px,300px,2%, 10px)
-		
+			@include gs-column(2,6,10px,10px,300px,2%, 10px)		
 	
 	&__big-col-2
 		@include gs-column(1,6,10px,10px,300px,2%, 10px)
 		@media screen and (max-width: 800px)
-			@include gs-column(4,6,10px,10px,300px,2%, 10px)
-		
+			@include gs-column(4,6,10px,10px,300px,2%, 10px)		
 	
 	&__col-4
 		@include gs-column(2,6,10px,10px,150px,2%, 10px)
 		@media screen and (max-width: 800px)
-			@include gs-column(4,6,10px,10px,150px,2%, 10px)
-		
+			@include gs-column(4,6,10px,10px,150px,2%, 10px)		
 	
 	&__col-2
 		@include gs-column(1,6,10px,10px,150px,2%, 10px)
 		@media screen and (max-width: 800px)
 			@include gs-column(2,6,10px,10px,150px,2%, 10px)
-		
-	
 
 
 

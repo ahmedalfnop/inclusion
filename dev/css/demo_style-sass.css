@@ -974,7 +974,7 @@ blockquote cite:before {
 .demo__intro-note p:first-child:before,
 .demo__note p:first-child:before,
 .demo__bq-center p:first-child:before,
-.demo__bq-center__bq-center-extra p:first-child:before {
+.demo__bq-center-extra p:first-child:before {
 	content: "“";
 	padding-right: 10px;
 	font-size: 60px;
@@ -1018,14 +1018,14 @@ blockquote cite:before {
 .demo__intro-note cite,
 .demo__note cite,
 .demo__bq-center cite,
-.demo__bq-center__bq-center-extra cite {
+.demo__bq-center-extra cite {
 	text-align: right;
 }
 
 .demo__intro-note,
 .demo__note,
 .demo__bq-center,
-.demo__bq-center__bq-center-extra {
+.demo__bq-center-extra {
 	text-align: justify;
 }
 
@@ -1053,7 +1053,7 @@ blockquote cite:before {
 	margin-right: -120px;
 }
 
-.demo__bq-center__bq-center-extra {
+.demo__bq-center-extra {
 	width: 100%;
 	width: -webkit-calc(100% + 240px);
 	width: calc(100% + 240px);
@@ -1083,11 +1083,11 @@ blockquote cite:before {
 .demo__intro-note cite,
 .demo__note cite,
 .demo__bq-center cite,
-.demo__bq-center__bq-center-extra cite,
+.demo__bq-center-extra cite,
 .demo__intro-note cite a,
 .demo__note cite a,
 .demo__bq-center cite a,
-.demo__bq-center__bq-center-extra cite a {
+.demo__bq-center-extra cite a {
 	color: #2b2b2b;
 }
 
@@ -1102,7 +1102,7 @@ blockquote cite:before {
 .demo__intro-note,
 .demo__note,
 .demo__bq-center,
-.demo__bq-center__bq-center-extra {
+.demo__bq-center-extra {
 	color: #777777;
 }
 
@@ -2085,7 +2085,7 @@ blockquote cite {
 	margin-right: -60px;
 }
 
-.demo__bq-center__bq-center-extra {
+.demo__bq-center-extra {
 	width: 100%;
 	width: -webkit-calc(100% + 120px);
 	width: calc(100% + 120px);
@@ -2272,7 +2272,7 @@ blockquote cite {
 	margin-right: auto;
 }
 
-.demo__bq-center__bq-center-extra {
+.demo__bq-center-extra {
 	width: 100%;
 	max-width: 100%;
 	margin-left: auto;

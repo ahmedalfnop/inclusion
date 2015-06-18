@@ -157,9 +157,9 @@ body{
 	&__bq-center{
 		@include blockquote($align: center);
 	}
-		&__bq-center-extra{
-			@include blockquote($align: center, $position: normal, $extra: true);
-		}
+	&__bq-center-extra{
+		@include blockquote($align: center, $position: normal, $extra: true);
+	}
 	&__bq-left{
 		@include blockquote($align: left);
 	}		
