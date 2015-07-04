@@ -1,0 +1,17 @@
+{
+	"scope": "text.html.markdown",
+	
+	"completions":
+	[
+		{ "trigger": "ibs", "contents": "<div class=\"$1 js-spoiler\">\n	<a href=\"#\" class=\"js-panel\">$2</a>\n		$3\n</div>" },
+		{ "trigger": "ibq", "contents": "<blockquote class=\"$1\">\n	<p>$2</p>\n	<cite><a rel=\"nofollow\" href=\"$3\">$4</a></cite>\n</blockquote>" },
+		{ "trigger": "ifc", "contents": "<figure class=\"$1\">\n	<pre><code class=\"language-$2\">\n		$3\n	</code></pre>\n	<figcaption>$4</figcaption>\n</figure>" },
+		{ "trigger": "ifi", "contents": "<figure class=\"$1\">\n	<img class=\"js-lazy js-view\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\" data-src=\"$2\" data-title=\"$3\" alt=\"$4\" />\n	<figcaption>$3</figcaption>\n</figure>" },
+		{ "trigger": "ifv", "contents": "<figure class=\"$1\">\n	<div>\n		$2\n	</div>\n	<figcaption>$3</figcaption>\n</figure>" },
+		{ "trigger": "ise", "contents": "<!-- $1 section start -->\n<section class=\"$1\" id=\"$1\">\n	<div class=\"container\">\n		<h2 class=\"$2\">$3</h2>\n		$4\n	</div>\n</section>\n<!-- $1 section end -->" },
+		{ "trigger": "itb", "contents": "<table class=\"$1\">\n	<caption>$2</caption>\n	<tr>\n		<th></th>\n	</tr>\n	<tr>\n		<td></td>\n	</tr>\n	<tr>\n		<td></td>\n	</tr>\n	<tr>\n		<td></td>\n	</tr>\n</table>" },
+		{ "trigger": "iul", "contents": "<ul class=\"$1\">\n	<li></li>\n</ul>" },
+		{ "trigger": "iol", "contents": "<ol class=\"$1\">\n	<li></li>\n</ol>" }
+	]
+}
+
