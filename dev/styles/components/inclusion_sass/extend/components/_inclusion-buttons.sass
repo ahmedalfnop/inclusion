@@ -54,7 +54,7 @@
 	%button-#{nth($color, 1)}-behavior
 		border-color: nth($color, 4)
 		color: nth($color, 2)
-		+transition(all, 0.2s)
+		transition: all .2s
 		&:hover
 			border-color: nth($color, 8)
 			color: nth($color, 4)
@@ -62,7 +62,7 @@
 		border-color: nth($color, 4)
 		color: nth($color, 4)
 		cursor: not-allowed
-		+opacity(0.5)
+		opacity: .5
 
 // Button float
 %button-float-left
@@ -103,13 +103,13 @@
 	overflow: hidden
 	font-size: 0
 	text-decoration: none
-	+transition(all, 0.5s)
+	transition: all .5s
 	&:after
 		@extend %icons
 		font-size: 35px
 		line-height: 45px
 	&:hover
-		+scale(1.2)
+		transform: scale(1.2)
 
 // Icon-button color
 @each $color in $colors
@@ -130,12 +130,12 @@
 
 // Icon-button shape
 %icon-button-rect
-	+rotate(45deg)
+	transform: rotate(45deg)
 	&:after
-		+rotate(-45deg)
-		+transition(all, 0.5s)
+		transform: rotate(-45deg)
+		transition: all .5s
 	&:hover:after
-		+rotate(0deg)
+		transform: rotate(0deg)
 
 %icon-button-round
-	+rounded(50%)
+	border-radius: 50%

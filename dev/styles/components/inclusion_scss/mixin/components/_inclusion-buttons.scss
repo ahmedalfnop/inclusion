@@ -21,7 +21,7 @@
             @if $state == "enabled"{
                border-color: nth($item,4);
                color: nth($item,2);   
-               @include transition(all, .2s);
+               transition: all .2s;
                &:hover{
                   border-color: nth($item,8);
                   color: nth($item,4);
@@ -30,7 +30,7 @@
                border-color: nth($item,4);
                color: nth($item,4);
                cursor: not-allowed;
-               @include opacity(0.5);
+               opacity: .5
             }  
          }         
       }         
@@ -83,7 +83,7 @@
       overflow: hidden;
       font-size: 0;
       text-decoration: none;
-      @include transition(all,.5s);
+      transition: all .5s;
 
       &:after{
          display: inline-block;
@@ -99,7 +99,7 @@
       }
                
       &:hover{
-         @include scale(1.2);
+         transform: scale(1.2);
       }
       @each $item in $icons {
          @if $icon == nth($item, 1){
@@ -118,16 +118,16 @@
          }
       }
       @if $shape == "rect"{           
-         @include rotate(45deg);
+        transform: rotate(45deg);
          
          &:after{
-            @include rotate(-45deg);
-            @include transition(all,.5s);
+            transform: rotate(-45deg);
+            transition: all .5s;
          }
          &:hover:after{
-            @include rotate(0deg);
+            transform: rotate(0deg);
          }
       }@else if $shape == "round"{
-         @include rounded(50%);
+         border-radius: 50%
       }
    } 

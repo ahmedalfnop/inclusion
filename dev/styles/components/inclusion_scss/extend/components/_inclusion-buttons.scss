@@ -67,7 +67,7 @@
          %button-#{nth($color,1)}-behavior{
             border-color: nth($color,4);
             color: nth($color,2);   
-            @include transition(all, .2s);
+            transition: all  .2s;
             &:hover{
                border-color: nth($color,8);
                color: nth($color,4);
@@ -77,7 +77,7 @@
             border-color: nth($color,4);
             color: nth($color,4);
             cursor: not-allowed;
-            @include opacity(0.5);
+            opacity: .5;
          }
       }
          
@@ -125,7 +125,7 @@
          overflow: hidden;
          font-size: 0;
          text-decoration: none;
-   		@include transition(all,.5s);
+   		transition: all .5s;
 
    		&:after{
    			@extend %icons;
@@ -134,7 +134,7 @@
    		}
    					
    		&:hover{
-   			@include scale(1.2);
+   			transform: scale(1.2);
    		}      			
       }
 
@@ -160,16 +160,16 @@
 
    /* Icon-button shape */
       %icon-button-rect{            
-         @include rotate(45deg);
+         transform: rotate(45deg);
          
          &:after{
-            @include rotate(-45deg);
-            @include transition(all,.5s);
+            transform: rotate(-45deg);
+            transition: all .5s;
          }
          &:hover:after{
-            @include rotate(0deg);
+            transform: rotate(0deg);
          }
       }
       %icon-button-round{
-         @include rounded(50%);
+         border-radius: 50%
       }  

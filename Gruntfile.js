@@ -4,22 +4,22 @@ module.exports = function(grunt) {
 			// Dev paths
 			dev: {
 				main: 'dev',
-				js: 'dev/js',
-				styles: 'dev/styles',
-				css: 'dev/css',
-				html: 'dev/html',
-				img: 'dev/img',
-				fonts: 'dev/fonts',
-				helpers: 'dev/helpers',
-				devtools: 'dev/devtools'
+		        js: '<%= dev.main %>/js',
+		        styles: '<%= dev.main %>/styles',
+		        css: '<%= dev.main %>/css',
+		        html: '<%= dev.main %>/html',
+		        img: '<%= dev.main %>/img',
+		        fonts: '<%= dev.main %>/fonts',
+		        helpers: '<%= dev.main %>/helpers',
+		        devtools: '<%= dev.main %>/devtools'
 			},
 			// Build paths
 			build: {
 				main: 'build',
-				css: 'build/css',
-				fonts: 'build/fonts',
-				img: 'build/img',
-				js: 'build/js'
+		        css: '<%= build.main %>/css',
+		        fonts: '<%= build.main %>/fonts',
+		        img: '<%= build.main %>/img',
+		        js: '<%= build.main %>/js'
 			}
 		}
 	});

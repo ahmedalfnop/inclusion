@@ -15,7 +15,7 @@
 			@if $state == "enabled"
 				border-color: nth($item, 4)
 				color: nth($item, 2)
-				+transition(all, 0.2s)
+				transition: all .2s
 				&:hover
 					border-color: nth($item, 8)
 					color: nth($item, 4)
@@ -23,7 +23,7 @@
 				border-color: nth($item, 4)
 				color: nth($item, 4)
 				cursor: not-allowed
-				+opacity(0.5)
+				opacity: .5
 	@each $item in $fonts
 		@if $font == nth($item, 1)
 			font-family: #{nth($item, 2)}
@@ -66,7 +66,7 @@
 	overflow: hidden
 	font-size: 0
 	text-decoration: none
-	+transition(all, 0.5s)
+	transition: all .5s
 	&:after
 		display: inline-block
 		font-family: "inclusion"
@@ -79,7 +79,7 @@
 		font-size: 35px
 		line-height: 45px
 	&:hover
-		+scale(1.2)
+		transform: scale(1.2)
 	@each $item in $icons
 		@if $icon == nth($item, 1)
 			&:after
@@ -91,11 +91,11 @@
 			&:after
 				color: #{nth($item, 2)}
 	@if $shape == "rect"
-		+rotate(45deg)
+		transform: rotate(45deg)
 		&:after
-			+rotate(-45deg)
-			+transition(all, 0.5s)
+			transform: rotate(-45deg)
+			transition: all .5s
 		&:hover:after
-			+rotate(0deg)
+			transform: rotate(0deg)
 	@else if $shape == "round"
-		+rounded(50%)
+		border-radius: 50%

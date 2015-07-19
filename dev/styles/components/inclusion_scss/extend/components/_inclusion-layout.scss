@@ -21,7 +21,7 @@
          @if $overlay == "none" {        
             background: url($bg-image) center 0 no-repeat;
             background-attachment: $bg-attachment; 
-            @include bg-size(cover);
+            background-size: cover
             
          } @else {
             @if $overlay == "light"{
@@ -33,7 +33,7 @@
             }               
                background-attachment: fixed, $bg-attachment; 
                background-color: $accent-color;
-               @include bg-size(auto, cover);
+              background-size: auto, cover;
          } 
       } 
       @if $jumbo != false{
@@ -76,8 +76,7 @@
 
    /* Section shadow */
       %section-inner-shadow{
-         @include multiple-box-shadow(inset  0  3px 3px -2px $shadow-color, 
-                                      inset  0 -3px 3px -2px $shadow-color);
+         box-shadow: inset  0  3px 3px -2px $shadow-color, inset  0 -3px 3px -2px $shadow-color;
       } 
 
    

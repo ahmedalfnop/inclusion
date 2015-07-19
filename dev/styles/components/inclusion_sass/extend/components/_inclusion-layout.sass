@@ -11,7 +11,7 @@
 		@if $overlay == "none"
 			background: url($bg-image) center 0 no-repeat
 			background-attachment: $bg-attachment
-			+bg-size(cover)
+			background-size: cover
 		@else
 			@if $overlay == "light"
 				background: url($overlay-light) repeat, url($bg-image) center 0 no-repeat
@@ -19,7 +19,7 @@
 				background: url($overlay-dark) repeat, url($bg-image) center 0 no-repeat
 			background-attachment: fixed, $bg-attachment
 			background-color: $accent-color
-			+bg-size(auto, cover)
+			background-size: auto, cover
 	@if $jumbo != false
 		@extend %section-jumbo
 
@@ -51,7 +51,7 @@
 
 // Section shadow
 %section-inner-shadow
-	+multiple-box-shadow(inset 0 3px 3px -2px $shadow-color, inset 0 -3px 3px -2px $shadow-color)
+	box-shadow: inset 0 3px 3px -2px $shadow-color, inset 0 -3px 3px -2px $shadow-color
 
 // Page chapter
 =chapter($divider: bottom)

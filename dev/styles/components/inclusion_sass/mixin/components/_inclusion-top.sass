@@ -14,7 +14,7 @@
 			position: relative
 			width: 100%
 			height: 50px
-			+multiple-box-shadow(inset 0 45px 35px -35px nth($item, 6))
+			box-shadow: inset 0 45px 35px -35px nth($item, 6)
 			& a
 				font-family: $font-condensed
 				font-size: 30px
@@ -22,7 +22,7 @@
 				color: nth($item, 2)
 				text-decoration: none
 				border-bottom: 1px dotted nth($item, 2)
-				+transition(all, 0.3s)
+				transition: all .3s
 				&:hover
 					color: nth($item, 8)
 					border-color: nth($item, 8)
@@ -49,7 +49,7 @@
 					color: nth($item, 2)
 					font-size: 32px
 					cursor: pointer
-					+transition(all, 0.3s)
+					transition: all .3s
 				&.is-open:before
 					content: "\e805"
 				&:hover:before
@@ -93,7 +93,7 @@
 					font-size: 30px
 					color: #{nth($item, 6)}
 					text-decoration: none
-					+transition(all, 0.3s)
+					transition: all .3s
 					&:hover
 						color: #{nth($item, 4)}
 					&.is-active

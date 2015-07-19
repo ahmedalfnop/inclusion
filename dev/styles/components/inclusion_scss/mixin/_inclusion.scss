@@ -19,7 +19,7 @@
 * Import........................Import some useful things
 *   Reset.......................Reset defaults 
 *   Fonts.......................Offline fonts
-*   Elements....................External scss mixins
+*   Mixins......................External scss mixins
 *   Grid system.................Import fluid gs
 *   Prism.......................Prism syntax highlight
 * Settings......................Framework settings and variables
@@ -55,7 +55,7 @@
 /* ==============================
    $Elements
    ==============================*/
-@import "components/elements";
+@import "components/mixins";
     
 
 /* ==============================

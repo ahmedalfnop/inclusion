@@ -22,7 +22,7 @@
          position: relative;
          width: 100%;
          height: 50px;
-         @include multiple-box-shadow( inset 0 45px 35px -35px nth($color, 6));
+         box-shadow: inset 0 45px 35px -35px nth($color, 6);
                        
          & a{            
             font-family: $font-condensed;
@@ -31,7 +31,7 @@
             color: nth($color, 2);
             text-decoration: none;
             border-bottom: 1px dotted nth($color, 2);    
-            @include transition(all, .3s);
+            transition: all .3s;
             
             &:hover{
                color: nth($color, 8);
@@ -64,7 +64,7 @@
                color: nth($color, 2);
                font-size: 32px;
                cursor: pointer;                
-               @include transition(all, .3s);
+               transition: all .3s;
             }
             &.is-open:before{                               
                content: "\e805";
@@ -124,7 +124,7 @@
                font-size: 30px;
                color: #{nth($color, 6)};    
                text-decoration: none;
-               @include transition(all, .3s);
+               transition: all .3s;
                
                &:hover{
                   color: #{nth($color, 4)};
