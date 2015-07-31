@@ -38,13 +38,13 @@ var Intense = (function() {
 
     // Holds the animation frame id.
     var looper;
-  
+
     // Current position of scrolly element
     var lastPosition, currentPosition = 0;
-    
+
     var sourceDimensions, target;
     var targetDimensions = { w: 0, h: 0 };
-  
+
     var container;
     var containerDimensions = { w: 0, h:0 };
     var overflowArea = { x: 0, y: 0 };
@@ -142,18 +142,18 @@ var Intense = (function() {
         this.style.opacity = '1';
       }
     }
-  
-    function start() { 
+
+    function start() {
       loop();
     }
-   
+
     function stop() {
       cancelRequestAnimFrame( looper );
     }
 
     function loop() {
         looper = requestAnimFrame(loop);
-        positionTarget();      
+        positionTarget();
     }
 
     // Lock scroll on the document body.
@@ -168,7 +168,7 @@ var Intense = (function() {
       document.body.style.overflow = overflowValue;
     }
 
-    function createViewer( title, descr ) {
+    function createViewer( title, caption ) {
 
       /*
        *  Container
@@ -191,24 +191,24 @@ var Intense = (function() {
       }
       var figureProperties= {
         'width': '100%',
-        'height': '100%',        
+        'height': '100%',
         'overflow': 'auto'
       }
 
-      //for ie9 create wrapper and set scroll for figure     
+      //for ie9 create wrapper and set scroll for figure
       if (isIE() && isIE () < 10){
         container = document.createElement( 'div' );
         figure = document.createElement( 'figure' );
         container.appendChild( figure );
         figure.appendChild( target );
-        applyProperties( container, containerProperties ); 
-        applyProperties( figure, figureProperties );     
+        applyProperties( container, containerProperties );
+        applyProperties( figure, figureProperties );
       } else{
         container = document.createElement( 'figure' );
         container.appendChild( target );
-        applyProperties( container, containerProperties ); 
+        applyProperties( container, containerProperties );
       }
-      
+
 
       var imageProperties = {
         'cursor': 'url( "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABSCAABFVgAADqXAAAXb9daH5AAAAP/SURBVHja5JpLaJ1FFMd/+YoKbSWNCS2aaJuQLmorPjbVlYsW1JK4srk2KuiyECgqRBNTfIAbcSvBhe1OF27Mo01MoWgWVbTWha+NTSmEiig2Si021/p3Mx8ch/uYme/m5hYPzOJ+9zz+/5n73TnnzLRJogHSDzwAPAx0u88dwGb3/RXgN+A8sAwsAueAH4sGbitAYCvwJDAEPARkkfbXgc+AD4EPgF+SUEiKHX2SJiX9ocbJ785nXyye2BV4DRgHbjLPVoEV4HPga+AHYAn4CbjsdDqA24E+YBdwP/AgsAW42fgqA28Crzd6Be6TdLbCrC1IGpG0O2EldzvbBefLypeS7g3xExJoSNI/xvmqpHlJJUntCcD90e58zTvfuVyXdLAogRFvZpYkvSRpWwOA+2Ob873kxRxJJXDEc/SppP1rANwf+10sK0diCRz0HExJ6m8C+Hz0u5hWngglsNMz/EhSdxPB56PbxbbSH0Lge2PwiSPEOo2dDkMu39UjMOG9sPvWEXw+9nkv9ng1Al1GqSxpVNKGFiCwwWEpG3ydlQi8axQ+ltQREeRpSZsj9G+V9EyEfofDlMukT6DTbFZX3MYS6vyos1uMsFl0NkcjbEoOW77JdVoCLxp2C26GQpxOeP8ScwE2c57NKxGrtmDsnrcEvnIPr9Xb+dxoqwA+hMRcFZsJ5zMkM7jmbM7mBO40jn6WtCfA0aE66fHJCjYn69gcCoi7x2HMpSd/AXOZDlzOnhqzWWkl5gN0ewJjTxu7pzJgr8muzwVm4cvAY8BsDZ1HgfeAY8AjNfRmna/lwNgW417/dzmU8D89W6ASm0mIN2R/qhmw3TC6kFCVDtRZiVozP5hgZzFuz4B28+BSYoE/GEliJhG8j7E9AzaZBysFOhyDwPEAvePA4wXiWIybMqAhjaG8TUOTJQOums9bCviaAZ4N0HvO6aaKxfhn5i3JHQXAD0S++KkkLMaVDLhoHvQmODwRCd6SOJFgZzFezFy/Mpe7E2b+QI3vj9V5sQ8krITFeB5JwwmpxF2STtXZpKarbP+V5JTzGZtKDKcmc6UI8KEkSqnJHKZtGJpO48q8SjJVw2aqis1oYEybTn9h64EXEguaMQ/IbELuNNaIguY2SX8nlpTjzu50hM3pSh2GiJKy7DD/p6ifLFDUlyRtjNDfGDlJflH/zo3eVumq1tgauwEaWy/Xay1+28KtxW9CeqO9Ldzc3RHaXh9owfb6QOwBx+EWOuA4/L88YrKnNeV1OORbrXYqE0sASfdIOtPEY9YzgUll9EH3KPAGcMsaHXT/BbwKvLWWVw16Jb0taaWBVw0uO5871vqqgZUuYLhBlz3eB35t9m2Vlrhu8+8ACTOGueBtHrIAAAAASUVORK5CYII=" ) 25 25, no-drop',
@@ -251,36 +251,53 @@ var Intense = (function() {
         applyProperties( captionTitle, captionTitleProperties );
         captionTitle.innerHTML = title;
         captionContainer.appendChild( captionTitle );
-      }
 
-      if ( descr ) {
-        var captionTextProperties = {
-          'fontFamily': '"Open Sans Condensed", Georgia, Times, "Times New Roman", serif',  
-          'margin': '0px',
-          'padding': '0px',
-          'fontWeight': 'normal',
-          'fontSize': '30px',
-          'letterSpacing': '0.1px',
-          'maxWidth': '500px',
-          'textAlign': 'left',
-          'background': 'none',
-          'marginTop': '5px'
+        if ( caption ) {
+          var captionTextProperties = {
+            'fontFamily': '"Open Sans Condensed", Georgia, Times, "Times New Roman", serif',
+            'margin': '0px',
+            'padding': '0px',
+            'fontWeight': 'normal',
+            'fontSize': '30px',
+            'letterSpacing': '0.1px',
+            'maxWidth': '500px',
+            'textAlign': 'left',
+            'background': 'none',
+            'marginTop': '5px'
+          }
+          var captionText = document.createElement( 'h2' );
+          applyProperties( captionText, captionTextProperties );
+          captionText.innerHTML = caption;
+          captionContainer.appendChild( captionText );
         }
-        var captionText = document.createElement( 'h2' );
-        applyProperties( captionText, captionTextProperties );
-        captionText.innerHTML = descr;
-        captionContainer.appendChild( captionText );
+      } else {
+        if ( caption ) {
+          var captionTextProperties = {
+            'margin': '0px',
+            'padding': '0px',
+            'fontWeight': 'normal',
+            'fontSize': '40px',
+            'letterSpacing': '0.5px',
+            'lineHeight': '35px',
+            'textAlign': 'left'
+          }
+          var captionText = document.createElement( 'h2' );
+          applyProperties( captionText, captionTextProperties );
+          captionText.innerHTML = caption;
+          captionContainer.appendChild( captionText );
+        }
       }
+      
       if (isIE() && isIE () < 10){
         figure.appendChild( captionContainer );
       } else{
         container.appendChild( captionContainer );
-      }  
+      }
       setDimensions();
 
       mouse.xCurr = mouse.xDest = window.innerWidth / 2;
       mouse.yCurr = mouse.yDest = window.innerHeight / 2;
-      
+
       document.body.appendChild( container );
       setTimeout( function() {
         container.style[ 'opacity' ] = '1';
@@ -296,7 +313,7 @@ var Intense = (function() {
 
     function setDimensions() {
 
-      // Manually set height to stop bug where 
+      // Manually set height to stop bug where
       var imageDimensions = getFit( sourceDimensions );
       target.width = imageDimensions.w;
       target.height = imageDimensions.h;
@@ -311,15 +328,15 @@ var Intense = (function() {
     function init( element ) {
 
       var imageSource = element.getAttribute( 'data-image') || element.src;
-      var title = element.getAttribute( 'alt');
-      var descr = element.getAttribute( 'data-descr');
-      
+      var title = element.getAttribute( 'data-title');
+      var caption = element.getAttribute( 'alt');
+
       var img = new Image();
       img.onload = function() {
 
         sourceDimensions = { w: img.width, h: img.height }; // Save original dimensions for later.
         target = this;
-        createViewer( title, descr );
+        createViewer( title, caption );
         lockBody();
         bindEvents();
         loop();
@@ -345,7 +362,7 @@ var Intense = (function() {
       window.removeEventListener(    'keyup',     onKeyUp,       false );
       target.removeEventListener(    'click',     removeViewer,  false )
     }
-  
+
     function onMouseMove( event ) {
 
       mouse.xDest = event.clientX;
@@ -365,9 +382,9 @@ var Intense = (function() {
       event.preventDefault();
       if ( event.keyCode === KEYCODE_ESC ) {
         removeViewer();
-      } 
+      }
     }
-  
+
     function positionTarget() {
 
       mouse.xCurr += ( mouse.xDest - mouse.xCurr ) * 0.05;
@@ -418,6 +435,7 @@ var Intense = (function() {
     });
 
 })();
+
 /* 
  * jQuery anchorScroll plugin for smooth scrollin to anchor, fallback script for pages without general nav but with standalone anchor links 
  */
