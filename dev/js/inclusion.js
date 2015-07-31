@@ -168,7 +168,7 @@ var Intense = (function() {
       document.body.style.overflow = overflowValue;
     }
 
-    function createViewer( title, caption ) {
+    function createViewer( title, descr ) {
 
       /*
        *  Container
@@ -253,7 +253,7 @@ var Intense = (function() {
         captionContainer.appendChild( captionTitle );
       }
 
-      if ( caption ) {
+      if ( descr ) {
         var captionTextProperties = {
           'fontFamily': '"Open Sans Condensed", Georgia, Times, "Times New Roman", serif',  
           'margin': '0px',
@@ -268,7 +268,7 @@ var Intense = (function() {
         }
         var captionText = document.createElement( 'h2' );
         applyProperties( captionText, captionTextProperties );
-        captionText.innerHTML = caption;
+        captionText.innerHTML = descr;
         captionContainer.appendChild( captionText );
       }
       if (isIE() && isIE () < 10){
@@ -311,15 +311,15 @@ var Intense = (function() {
     function init( element ) {
 
       var imageSource = element.getAttribute( 'data-image') || element.src;
-      var title = element.getAttribute( 'data-title');
-      var caption = element.getAttribute( 'alt');
+      var title = element.getAttribute( 'alt');
+      var descr = element.getAttribute( 'data-descr');
       
       var img = new Image();
       img.onload = function() {
 
         sourceDimensions = { w: img.width, h: img.height }; // Save original dimensions for later.
         target = this;
-        createViewer( title, caption );
+        createViewer( title, descr );
         lockBody();
         bindEvents();
         loop();
