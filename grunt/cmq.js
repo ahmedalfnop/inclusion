@@ -6,7 +6,6 @@ module.exports = {
 	main: {
 		files:[{
 			expand: true,
-			flatten: true,
 			src: '<%= build.css %>/**/*.css',
 			dest: '<%= build.css %>/'
 		}]

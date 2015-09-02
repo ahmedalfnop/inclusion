@@ -1,18 +1,18 @@
-/* ==============================
-   $Contents
-   ==============================*/
-/**
-* Contents......................Here we are!
-* Reset.........................Some necessary reset styles
-* Variables.....................Inner vars
-* General styles................Main styles
-*/
+// ==============================
+// $Contents
+// ==============================
+//
+//
+//
+// Contents......................Here we are!
+// Reset.........................Some necessary reset styles
+// Variables.....................Inner vars
+// General styles................Main styles
 
 
-
-/* ==============================
-   $Reset styles
-   ==============================*/ 
+// ==============================
+// $Reset styles
+// ==============================
 
 html, body{
 	position: relative !important;
@@ -24,10 +24,10 @@ html, body{
 }
 
 
+// ==============================
+// $Variables
+// ==============================
 
-/* ==============================
-   $Variables
-   ==============================*/ 
 $dark-color: #4a4a4f;
 $lighter-color: lighten($dark-color, 20%);
 
@@ -40,9 +40,9 @@ $font-serif: Georgia, Times, 'Times New Roman', serif;
 $font-sans: Tahoma, Verdana, Arial, sans-serif;
 
 
-/* ==============================
-   $General styles
-   ==============================*/
+// ==============================
+// $General styles
+// ==============================
 
 .browser-msg{
 	position: fixed;
@@ -117,12 +117,12 @@ $font-sans: Tahoma, Verdana, Arial, sans-serif;
 		color: $link-color;
 		text-decoration: none;
 		white-space: normal;
-	
+
 		&:hover{
 			text-decoration: none;
 		}
-	}	
-}	
+	}
+}
 
 .browser-item__img{
 	display: inline-block;
@@ -133,23 +133,23 @@ $font-sans: Tahoma, Verdana, Arial, sans-serif;
 	background-image: url("../img/bro-sprite.png");
 	cursor: pointer;
 	text-align: center;
-						
+
 	&.chrome{
 		background-position: 0 0;
-	}				
+	}
 	&.firefox{
 		background-position: -125px 0;
-	}				
+	}
 	&.safari{
 		background-position: -250px 0;
-	}				
+	}
 	&.opera{
 		background-position: -375px 0;
-	}				
+	}
 	&.ie{
 		background-position: -500px 0;
 	}
-}	
+}
 
 .browser-item__title{
 	margin: 5px 0 10px;
@@ -157,7 +157,7 @@ $font-sans: Tahoma, Verdana, Arial, sans-serif;
 	font-size: 20px;
 	text-align: center;
 	color: $link-color;
-}	
+}
 
 .browser-item__descr{
 	font-family: $font-sans;
@@ -166,7 +166,7 @@ $font-sans: Tahoma, Verdana, Arial, sans-serif;
 	color: $lighter-color;
 	font-style: italic;
 	text-align: left;
-}	
+}
 
 .browser-item__note{
 	position: absolute;
